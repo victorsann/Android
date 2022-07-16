@@ -10,13 +10,13 @@ Sendo o principal rival do IOS, e muitas vezes único, o sistema Android passou 
 
 <h1>Guia de Desenvolvimento</h1>
 
-Tendo apresentado seus números, é possível passar a pensar no apecto que supre tal montante: o desenvolvimento. A Android SDK faz parte ou impacta a vida da maior parte dos desenvolvedores mobile, sejam especialisatas, generalistas ou criadores de aplicações híbridas, o que contabiliza mais de 70% da stack.
+Tendo apresentado seus números, é possível passar a pensar no apecto que supre tal montante: o desenvolvimento. O Android SDK faz parte ou impacta a vida da maior parte dos desenvolvedores mobile, sejam especialisatas, generalistas ou criadores de aplicações híbridas, o que contabiliza mais de 70% da stack.
 
 A documentação a seguir busca inicialmente introduzir os fundamentos do desenvolvimento de aplicativos Android, priorizando o desenvolvimento mobile, e, posteriormente, se aprofundar em especificidades. 
 
 <h1>Application Fundamentals</h1>
 
-Os aplicativos Android podem ser desenvolvido usando as linguagens [Kotlin](https://github.com/VictorSantos12/Kotlin), Java e C++. As ferramentas do Android SDK compilam seu código junto com quaisquer dados e arquivos de recursos em um APK ou Android App Bundle. 
+Os aplicativos Android podem ser desenvolvidos usando as linguagens [Kotlin](https://github.com/VictorSantos12/Kotlin), Java e C++. As ferramentas do Android SDK compilam seu código junto com quaisquer dados e arquivos de recursos em um APK ou Android App Bundle. 
 
 Um package Android, que é um arquivo compactado com um sufixo .apk, contém o conteúdo de um aplicativo Android necessário em tempo de execução e é o arquivo que os dispositivos com tecnologia Android usam para instalar o aplicativo.
 
@@ -37,3 +37,22 @@ O sistema Android implementa o princípio de privilégio mínimo. Ou seja, cada 
 - É possível fazer com que dois aplicativos compartilhem o mesmo ID de usuário do Linux e, nesse caso, eles podem acessar os arquivos um do outro. Para conservar os recursos do sistema, os aplicativos com o mesmo ID de usuário também podem ser executados no mesmo processo do Linux e compartilhar a mesma VM. Os aplicativos também devem ser assinados com o mesmo certificado.<br>
 
 - Um aplicativo pode solicitar permissão para acessar dados do dispositivo, como localização, câmera e conexão Bluetooth do dispositivo. O usuário deve conceder explicitamente essas permissões. Tal assunto será abordado mais a frente.
+
+<h1>App Components</h1>
+
+Os App Components são os blocos de construção essenciais de um aplicativo Android. Cada componente é um ponto de entrada pelo qual o sistema ou um usuário pode entrar em seu aplicativo. Há quatro tipos distintos de app components:
+
+- Activities<br>
+- Services<br>
+- Broadcast receivers<br>
+- Content providers
+
+Cada component serve a um propósito distinto e possui um ciclo de vida distinto que define como o mesmo é criado e destruído. Os tópicos a seguir descrevem cada um dos quatro em detalhes:
+
+<h2>Activities</h2>
+
+<h2>Services</h2>
+
+<h2>Broadcast receivers</h2>
+
+<h2>Content providers</h2>
