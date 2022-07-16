@@ -8,9 +8,9 @@ O Android é um sistema operacional mobile, baseado em Linux, criado pela Google
 
 Sendo o principal rival do IOS, e muitas vezes único, o sistema Android passou a ser adotado pela maior parte das empresas que desenvolvem aparelhos móveis. Empresas como Samsung, Motorola, Xiaomi e muitas outras adotaram o OS da Google a partir de sua entrada no mercado. Contudo, sua popularidade se dá muito graças a pirataria, resultado da sua já popular acessibilidade.
 
-Tendo apresentado seus números, é possível passar a pensar no apecto que supre tal montante: o desenvolvimento. A Android SDK faz parte ou impacta a vida da maior parte dos desenvolvedores mobile, sejam especialisatas, generalistas ou criadores de aplicações híbridas, o que contabiliza mais de 70% da stack.
-
 <h1>Guia de Desenvolvimento</h1>
+
+Tendo apresentado seus números, é possível passar a pensar no apecto que supre tal montante: o desenvolvimento. A Android SDK faz parte ou impacta a vida da maior parte dos desenvolvedores mobile, sejam especialisatas, generalistas ou criadores de aplicações híbridas, o que contabiliza mais de 70% da stack.
 
 A documentação a seguir busca inicialmente introduzir os fundamentos do desenvolvimento de aplicativos Android, priorizando o desenvolvimento mobile, e, posteriormente, se aprofundar em especificidades. 
 
@@ -36,4 +36,4 @@ O sistema Android implementa o princípio de privilégio mínimo. Ou seja, cada 
 
 - É possível fazer com que dois aplicativos compartilhem o mesmo ID de usuário do Linux e, nesse caso, eles podem acessar os arquivos um do outro. Para conservar os recursos do sistema, os aplicativos com o mesmo ID de usuário também podem ser executados no mesmo processo do Linux e compartilhar a mesma VM. Os aplicativos também devem ser assinados com o mesmo certificado.<br>
 
-- Um aplicativo pode solicitar permissão para acessar dados do dispositivo, como localização, câmera e conexão Bluetooth do dispositivo. O usuário deve conceder explicitamente essas permissões. Para obter mais informações, consulte Trabalhando com permissões do sistema.
+- Um aplicativo pode solicitar permissão para acessar dados do dispositivo, como localização, câmera e conexão Bluetooth do dispositivo. O usuário deve conceder explicitamente essas permissões. Tal assunto será abordado mais a frente.
