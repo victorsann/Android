@@ -101,7 +101,9 @@ Uma activity possui essencialmente quatro estados:
 
 <div style="display: inline-block; float: left;">
   <img style="width: 300px; height: 500px;" src="https://user-images.githubusercontent.com/61476935/151175041-627c1299-c046-4cf3-8170-b1e81af3ed52.gif">
-  <p>teste</p>
+  <div>
+    <p>teste</p>
+  </div>
 </div>
 
   Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), ela está <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
