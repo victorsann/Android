@@ -102,7 +102,7 @@ Uma activity possui essencialmente quatro estados:
 <div style="display: inline-block; float: left;">
   <img style="width: 300px; height: 500px;" src="https://user-images.githubusercontent.com/61476935/151175041-627c1299-c046-4cf3-8170-b1e81af3ed52.gif">
   <div>
-    <p>teste</p>
+    teste
   </div>
 </div>
 
