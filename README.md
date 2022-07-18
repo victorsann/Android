@@ -53,9 +53,9 @@ Cada component serve a um propósito distinto e possui um ciclo de vida distinto
 
 <h2>Activities</h2>
 
-Uma <i>activity</i> é o meio de interação entre o sistema e o usuário, sendo representada por uma tela contendo uma interface. Definindo de forma mais direta, uma activity nada mais é que uma classe que se comporta de formas distintas mediante mudanças de estado ocasionadas por interções do usuário.
+Uma <i>activity</i> é o meio de interação entre o sistema e o usuário, sendo representada por uma tela contendo uma interface. Por exemplo, um app como o Gmail possui uma activity para listar novos emails, uma activiy que permite a leitura desses emails e outra que permite escreve-los e enviá-los. Ou seja, as activities trabalham para criar uma experiência coesa das funções de uma aplicação. 
 
-Por exemplo, um app como o Gmail possui uma activity para listar novos emails, uma activiy que permite a leitura desses emails e outra que permite escreve-los e enviá-los. Ou seja, as activities trabalham para criar uma experiência coesa das funções de uma aplicação. Também cabe destacar que uma activity pode ser inicializada por um outro app, quando permitido. Um exemplo seria o acesso ao app da câmera ou de armazenamento de arquivos, em casos em que o email possar conter um recurso provido por um deles.
+Também cabe destacar que uma activity pode ser inicializada por um outro app, quando permitido. Um exemplo seria o acesso ao app da câmera ou de armazenamento de arquivos, em casos em que o email possar conter um recurso provido por um deles.
 
 As funções das activities também incluem facilitar as seguintes interações entre o sistema e o app:
 
@@ -66,6 +66,7 @@ As funções das activities também incluem facilitar as seguintes interações 
 
 Uma activity é implementada como uma subclasse da classe [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1), a qual será abordada em detalhes a seguir.
 
+<h2>Activity Class</h2>
 
 
 
