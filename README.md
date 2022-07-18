@@ -100,7 +100,7 @@ As activities em um sistema Android são agrupadas seguindo o modelo de [Stack](
 Uma activity possui essencialmente quatro estados:
 
 <div>
-  <img align="left" style="width: 300px;" src="https://user-images.githubusercontent.com/61476935/179614835-f18ee0ca-a3a6-43f8-a02e-58e7c1f91f56.png">
+  <img align="left" style="width: 250px;" src="https://user-images.githubusercontent.com/61476935/179614835-f18ee0ca-a3a6-43f8-a02e-58e7c1f91f56.png">
   teste
 </div>
 
