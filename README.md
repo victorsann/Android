@@ -99,10 +99,19 @@ As activities em um sistema Android são agrupadas seguindo o modelo de [Stack](
 
 Uma activity possui essencialmente quatro estados:
 
-<div style="float: flex; align-items: center; justify-content: center">
-  <img style="width: 300px; height: 300px;" src="https://user-images.githubusercontent.com/61476935/151175041-627c1299-c046-4cf3-8170-b1e81af3ed52.gif">
+<!-- <div style="float: flex; align-items: center; justify-content: center">
+  <img style="width: 300px;" src="https://user-images.githubusercontent.com/61476935/151175041-627c1299-c046-4cf3-8170-b1e81af3ed52.gif">
   teste
-</div>
+</div> -->
+<table>
+  <tr>
+    <td><img  width="300" height="150" src='http://i.stack.imgur.com/dioLI.png'/></td>
+    
+    <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </br>
+Phasellus bibendum aliquet erat, ut ornare purus malesuada et.</td> 
+  </tr>
+ 
+</table>
 
   Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), ela está <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
 
