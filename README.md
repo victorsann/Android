@@ -89,7 +89,7 @@ Como foi dito, uma activity é um fragmento da aplicação com qual o usuário p
 
 <h2>Stack</h2>
 
-As activities em um sistema Android são agrupadas seguindo o modelo de [Stack](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura. Quando um activity é inicializada, ela é posicionada sobre a stack atual, passando a ser a activity em execução; a activity anterior sempre permanece abaixo na stack, e não voltará ao primeiro plano novamente até que a nova activity seja encerrada. É possível que haja um ou multiplas stacks visíveis em uma tela.
+As activities em um sistema Android são agrupadas seguindo o modelo de [Stack](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura. Quando um activity é inicializada, ela é posicionada sobre a stack atual, passando a ser a activity em execução; a activity anterior sempre permanece abaixo na stack, e não voltará ao primeiro plano novamente até que a nova activity seja encerrada. É possível que haja uma ou multiplas stacks visíveis em uma tela.
 
 <div align="center">
   <img src="">
@@ -97,26 +97,29 @@ As activities em um sistema Android são agrupadas seguindo o modelo de [Stack](
 
 <h2>Activity Lifecycle</h2>
 
-Uma activity possui essencialmente quatro estados:
+Uma activity possui essencialmente quatro states:
 
   <img align="left" style="width: 250px;" src="https://user-images.githubusercontent.com/61476935/179614835-f18ee0ca-a3a6-43f8-a02e-58e7c1f91f56.png">
-  teste
+  
+  <h4>Active</h4>
 
-  Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), ela está <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
-  Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), ela está <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
-  Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), ela está <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
-  Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), ela está <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
-  Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), ela está <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
-  Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), ela está <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
-  Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), ela está <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
-  Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), ela está <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
+  Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), seus state é definido como <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
+  
+  <h4>Visible</h4>
 
+  Caso uma activity tenha perdido o foco, mas ainda esteja sendo apresentada ao usuário, seu state é definido como <i>visible</i>. Alguns exemplos deste caso são: quando uma nova activity cujo espaço não equivalha a totalidade da tela é acessado; quando uma outra activity se posiciona acima na stack; ou ou a atividade em si não é focalizável na janela atual. Esse state mantém a activity completamente ativa, mantendo todas as informações anexadas ao gerenciador de janelas.
+
+  <h4>Stopped</h4>
+
+  Se uma atividade for completamente obscurecida por outra, esta passa a ser <i>stopped</i> ou <i>hidden</i>. Ele ainda retém todas as informações, no entanto, não é mais visível, portanto, sua janela fica oculta e geralmente será eliminada pelo sistema quando a memória for necessária em outro lugar
+
+  <h4>Destroyed</h4>
+
+  O sistema pode descartar uma activity da memória pedindo que ela termine ou simplesmente eliminando seu processo, a tornando <i>destroyed</i>. Quando for exibida novamente para o usuário, ela deve ser completamente reiniciada, retomando o estado anterior.
+  
 <div align="center">
   <img src="">
 </div>
-
-
-
 
 
 <h1>Services</h1>
