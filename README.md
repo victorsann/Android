@@ -53,22 +53,22 @@ Cada component serve a um propósito distinto e possui um ciclo de vida distinto
 
 <h1>Activities</h1>
 
-Uma <i>activity</i> é o meio de interação entre o sistema e o usuário, sendo representada por uma tela contendo uma interface. Por exemplo, um app como o Gmail possui uma activity para listar novos emails, uma activiy que permite a leitura desses emails e outra que permite escreve-los e enviá-los. Ou seja, as activities trabalham para criar uma experiência coesa das funções de uma aplicação. 
+Uma <i>atividade</i> é um fragmento da aplicação com qual o usuário pode interagir. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura desses emails e outra que permite responde-los. Ou seja, as atividade trabalham para criar uma experiência coesa das funções de uma aplicação. 
 
-Também cabe destacar que uma activity pode ser inicializada por um outro app, quando permitido. Um exemplo seria o acesso ao app da câmera ou de armazenamento de arquivos, em casos em que o email possar conter um recurso provido por um deles.
+Também cabe destacar que uma atividade pode ser inicializada por um outro app, quando permitido. Um exemplo seria o acesso ao app da câmera ou de armazenamento de arquivos, em casos em que o email possar conter um recurso provido por um deles.
 
-As funções das activities também incluem facilitar as seguintes interações entre o sistema e o app:
+As funções das atividades também incluem facilitar as seguintes interações entre o sistema e o app:
 
 - Acompanhar as funções de interesse do usuário no momento (o que está em tela) para garantir que o sistema as continue executando.
-- Saber que os processos usados ​​anteriormente contêm coisas para as quais o usuário pode retornar (activities interrompidas) e, portanto, mantê-los ativos.
-- Ajudar o aplicativo a lidar com a interrupção de processos para que o usuário possa retornar às activities mantendo seus estados anteriores restaurados.
+- Saber que os processos usados ​​anteriormente contêm coisas para as quais o usuário pode retornar (atividades interrompidas) e, portanto, mantê-los ativos.
+- Ajudar o aplicativo a lidar com a interrupção de processos para que o usuário possa retornar às atividades mantendo seus estados anteriores restaurados.
 - Fornecer uma maneira para os aplicativos implementarem fluxos de usuários entre si e para o sistema coordenar esses fluxos. (Sendo o exemplo mais clássico o share).
 
-Uma activity é implementada como uma subclasse da classe [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1), a qual será abordada em detalhes a seguir.
+Uma atividade é implementada como uma subclasse da classe [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1), a qual será abordada em detalhes a seguir.
 
-<h1>The Activity Class</h1>
+<h1>A Classe Activity</h1>
 
-Como foi dito, uma activity é um fragmento da aplicação com qual o usuário pode interagir. Quase todas as atividades interagem com o usuário, logo a classe Activity se encarrega de criar métodos para lidar com as diferentes formas de interação e seus resultados. Tais métodos definem o ciclo de vida de uma activity, e estes são:
+Quase todas as atividades interagem com o usuário, logo a classe Activity se encarrega de criar métodos para lidar com as diferentes formas de interação e seus resultados. Tais métodos definem o ciclo de vida de uma atividade, e estes são:
 
     public class Activity extends ApplicationContext {
       
@@ -89,7 +89,7 @@ Como foi dito, uma activity é um fragmento da aplicação com qual o usuário p
 
 <h2>Stack</h2>
 
-As activities em um sistema Android são agrupadas seguindo o modelo de [Stack](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura. Quando um activity é inicializada, ela é posicionada sobre a stack atual, passando a ser a activity em execução; a activity anterior sempre permanece abaixo na stack, e não voltará ao primeiro plano novamente até que a nova activity seja encerrada. É possível que haja uma ou multiplas stacks visíveis em uma tela.
+As atividades em um sistema Android são agrupadas seguindo o modelo de [Stack](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura. Quando um atividade é inicializada, ela é posicionada sobre a stack atual, passando a estar em execução; a atividade anterior sempre permanece abaixo na stack, e não voltará ao primeiro plano novamente até que a nova seja encerrada. É possível que haja uma ou multiplas stacks visíveis em uma tela.
 
 <div align="center">
   <img src="">
@@ -97,28 +97,28 @@ As activities em um sistema Android são agrupadas seguindo o modelo de [Stack](
 
 <h2>Activity Lifecycle</h2>
 
-Uma activity possui essencialmente quatro states:
+Uma atividade possui essencialmente quatro estados:
 
   <h4>Active</h4>
 
-  Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), seus state é definido como <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
-  
+  Caso uma atividade esteja em primeiro plano (na posição mais acima da stack atual), seus estado é definido como <i>active</i> ou <i>running</i>, sendo, normalmente, a atividade com a qual o usuário está interegindo.
 
   <img align="left" style="width: 250px;" src="https://user-images.githubusercontent.com/61476935/179614835-f18ee0ca-a3a6-43f8-a02e-58e7c1f91f56.png">
   
-
   <h4>Visible</h4>
 
-  Caso uma activity tenha perdido o foco, mas ainda esteja sendo apresentada ao usuário, seu state é definido como <i>visible</i>. Alguns exemplos deste caso são: quando uma nova activity cujo espaço não equivalha a totalidade da tela é acessado; quando uma outra activity se posiciona acima na stack; ou ou a atividade em si não é focalizável na janela atual. Esse state mantém a activity completamente ativa, mantendo todas as informações anexadas ao gerenciador de janelas.
+  Caso uma atividade tenha perdido o foco, mas ainda esteja sendo apresentada ao usuário, seu estado é definido como <i>visible</i>. Alguns exemplos deste caso são: quando uma nova atividade cujo espaço não equivalha a totalidade da tela é acessado; quando uma outra atividade se posiciona acima na stack; ou a atividade em si não é focalizável na janela atual. Esse estado mantém a atividade completamente ativa, mantendo todas as informações anexadas ao gerenciador de janelas.
 
   <h4>Stopped</h4>
 
-  Se uma atividade for completamente obscurecida por outra, esta passa a ser <i>stopped</i> ou <i>hidden</i>. Ele ainda retém todas as informações, no entanto, não é mais visível, portanto, sua janela fica oculta e geralmente será eliminada pelo sistema quando a memória for necessária em outro lugar
+  Se uma atividade for completamente obscurecida por outra, o estado desta passa a ser <i>stopped</i> ou <i>hidden</i>. Ela ainda retém todas as informações, no entanto, não é mais visível, portanto, sua janela fica oculta e geralmente será eliminada pelo sistema quando a memória for necessária em outro lugar
 
   <h4>Destroyed</h4>
 
-  O sistema pode descartar uma activity da memória pedindo que ela termine ou simplesmente eliminando seu processo, a tornando <i>destroyed</i>. Quando for exibida novamente para o usuário, ela deve ser completamente reiniciada, retomando o estado anterior.
+  O sistema pode descartar uma atividade da memória pedindo que ela termine ou simplesmente eliminando seu processo, a tornando <i>destroyed</i>. Quando for exibida novamente para o usuário, ela deve ser completamente reiniciada, retomando o estado anterior.
   
+O diagrama a seguir ilustra como o ciclo de vida de uma atividade deve se comportar:
+
 <div align="center">
   <img src="">
 </div>
