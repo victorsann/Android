@@ -51,7 +51,7 @@ Os App Components são os blocos de construção essenciais de um aplicativo And
 
 Cada component serve a um propósito distinto e possui um ciclo de vida distinto, o qual define como o mesmo é criado e destruído. Os tópicos a seguir descrevem cada um dos quatro em detalhes:
 
-<h2>Activities</h2>
+<h1>Activities</h1>
 
 Uma <i>activity</i> é o meio de interação entre o sistema e o usuário, sendo representada por uma tela contendo uma interface. Por exemplo, um app como o Gmail possui uma activity para listar novos emails, uma activiy que permite a leitura desses emails e outra que permite escreve-los e enviá-los. Ou seja, as activities trabalham para criar uma experiência coesa das funções de uma aplicação. 
 
@@ -66,14 +66,59 @@ As funções das activities também incluem facilitar as seguintes interações 
 
 Uma activity é implementada como uma subclasse da classe [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1), a qual será abordada em detalhes a seguir.
 
-<h2>Activity Class</h2>
+<h1>The Activity Class</h1>
+
+Como foi dito, uma activity é um fragmento da aplicação com qual o usuário pode interagir. Quase todas as atividades interagem com o usuário, logo a classe Activity se encarrega de criar métodos para lidar com as diferentes formas de interação e seus resultados. Tais métodos definem o ciclo de vida de uma activity, e estes são:
+
+    public class Activity extends ApplicationContext {
+      
+        protected void onCreate(Bundle savedInstanceState);
+    
+        protected void onStart();
+    
+        protected void onRestart();
+    
+        protected void onResume();
+    
+        protected void onPause();
+    
+        protected void onStop();
+    
+        protected void onDestroy();
+    }
+
+<h2>Stack</h2>
+
+As activities em um sistema Android são agrupadas seguindo o modelo de [Stack](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura. Quando um activity é inicializada, ela é posicionada sobre a stack atual, passando a ser a activity em execução; a activity anterior sempre permanece abaixo na stack, e não voltará ao primeiro plano novamente até que a nova activity seja encerrada. É possível que haja um ou multiplas stacks visíveis em uma tela.
+
+<div align="center">
+  <img src="">
+</div>
+
+<h2>Activity Lifecycle</h2>
+
+Uma activity possui essencialmente quatro estados:
+
+<div style="display: incline-block;">
+  <img src="">
+  - Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), ela está <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
+</div>
+
+
+- Caso 
+
+
+
+<div align="center">
+  <img src="">
+</div>
 
 
 
 
 
-<h2>Services</h2>
+<h1>Services</h1>
 
-<h2>Broadcast receivers</h2>
+<h1>Broadcast receivers</h1>
 
-<h2>Content providers</h2>
+<h1>Content providers</h1>
