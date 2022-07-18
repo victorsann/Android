@@ -4,13 +4,13 @@
 <br>
 <img src="https://img.shields.io/static/v1?label=android&message=Mobile-Development&color=green&style=for-the-badge&logo=Android"/>
 
-O Android é um sistema operacional mobile, baseado em Linux, criado pela Google em 2009. Possuindo mais de dois bilhões de usuários e estando presente em mais de vinte e quatro mil dispositivos, desde smartphones e smartwatches a televisores e veículos, o sistema ganhou a alcunha de mais popular do mundo. O fato é que sua história se mistura com a histório de criação e adoção em massa dos smartphones, e por consequência, do desenvolvimento mobile.
+O Android é um sistema operacional mobile, baseado em Linux, criado pela Google em 2009. Possuindo mais de dois bilhões de usuários e estando presente em mais de vinte e quatro mil modelos de dispositivos, desde smartphones e smartwatches a televisores e veículos, o sistema ganhou a alcunha de mais popular do mundo. O fato é que sua história se mistura com a histório de criação e adoção em massa dos smartphones, e por consequência, do desenvolvimento mobile.
 
 Sendo o principal rival do IOS, e muitas vezes único, o sistema Android passou a ser adotado pela maior parte das empresas que desenvolvem aparelhos móveis. Empresas como Samsung, Motorola, Xiaomi e muitas outras adotaram o OS da Google a partir de sua entrada no mercado. Contudo, sua popularidade se dá muito graças a pirataria, resultado da sua já popular acessibilidade.
 
 <h1>Guia de Desenvolvimento</h1>
 
-Tendo apresentado seus números, é possível passar a pensar no apecto que supre tal montante: o desenvolvimento. O Android SDK faz parte ou impacta a vida da maior parte dos desenvolvedores mobile, sejam especialisatas, generalistas ou criadores de aplicações híbridas, o que contabiliza mais de 70% da stack.
+Tendo apresentado seus números, é possível passar a pensar no apecto que supre tal montante: o desenvolvimento. O Android SDK faz parte ou impacta a vida da maior parte dos desenvolvedores mobile, sejam especialistas, generalistas ou criadores de aplicações híbridas, o que contabiliza mais de 70% da stack.
 
 A documentação a seguir busca inicialmente introduzir os fundamentos do desenvolvimento de aplicativos Android, priorizando o desenvolvimento mobile, e, posteriormente, se aprofundar em especificidades. 
 
@@ -32,11 +32,13 @@ Cada aplicativo Android vive em sua própria sendBox, protegida pelos seguintes 
 
 - Por padrão, cada aplicativo é executado em seu próprio processo Linux. O sistema Android inicia o processo quando qualquer um dos componentes do aplicativo precisa ser executado e, em seguida, encerra o processo quando não é mais necessário ou quando o sistema deve recuperar memória para outros aplicativos.
 
-O sistema Android implementa o princípio de privilégio mínimo. Ou seja, cada aplicativo, por padrão, tem acesso apenas aos componentes necessários para fazer seu trabalho e nada mais. Isso cria um ambiente muito seguro no qual um aplicativo não pode acessar partes do sistema para as quais não tem permissão. No entanto, existem maneiras de um aplicativo compartilhar dados com outros aplicativos e de um aplicativo acessar os serviços do sistema:
+Também cabe ressaltar que o sistema Android implementa o princípio de privilégio mínimo. Ou seja, cada aplicativo, por padrão, tem acesso apenas aos componentes necessários para fazer seu trabalho e nada mais. Isso cria um ambiente seguro no qual um aplicativo não pode acessar partes do sistema para as quais não tem permissão. No entanto, existem maneiras de um aplicativo compartilhar dados com outros aplicativos e de um aplicativo acessar os serviços do sistema:
 
 - É possível fazer com que dois aplicativos compartilhem o mesmo ID de usuário do Linux e, nesse caso, eles podem acessar os arquivos um do outro. Para conservar os recursos do sistema, os aplicativos com o mesmo ID de usuário também podem ser executados no mesmo processo do Linux e compartilhar a mesma VM. Os aplicativos também devem ser assinados com o mesmo certificado.<br>
 
-- Um aplicativo pode solicitar permissão para acessar dados do dispositivo, como localização, câmera e conexão Bluetooth do dispositivo. O usuário deve conceder explicitamente essas permissões. Tal assunto será abordado mais a frente.
+- Um aplicativo pode solicitar permissão para acessar dados do dispositivo, como localização, câmera e conexão Bluetooth. O usuário deve conceder explicitamente essas permissões. 
+
+Tais métodos serão mais bem abordados no decorrer da documentação.
 
 <h1>App Components</h1>
 
@@ -47,9 +49,27 @@ Os App Components são os blocos de construção essenciais de um aplicativo And
 - Broadcast receivers<br>
 - Content providers
 
-Cada component serve a um propósito distinto e possui um ciclo de vida distinto que define como o mesmo é criado e destruído. Os tópicos a seguir descrevem cada um dos quatro em detalhes:
+Cada component serve a um propósito distinto e possui um ciclo de vida distinto, o qual define como o mesmo é criado e destruído. Os tópicos a seguir descrevem cada um dos quatro em detalhes:
 
 <h2>Activities</h2>
+
+Uma <i>activity</i> é o meio de interação entre o sistema e o usuário, sendo representada por uma tela contendo uma interface. Definindo de forma mais direta, uma activity nada mais é que uma classe que se comporta de formas distintas mediante mudanças de estado ocasionadas por interções do usuário.
+
+Por exemplo, um app como o Gmail possui uma activity para listar novos emails, uma activiy que permite a leitura desses emails e outra que permite escreve-los e enviá-los. Ou seja, as activities trabalham para criar uma experiência coesa das funções de uma aplicação. Também cabe destacar que uma activity pode ser inicializada por um outro app, quando permitido. Um exemplo seria o acesso ao app da câmera ou de armazenamento de arquivos, em casos em que o email possar conter um recurso provido por um deles.
+
+As funções das activities também incluem facilitar as seguintes interações entre o sistema e o app:
+
+- Acompanhar as funções de interesse do usuário no momento (o que está em tela) para garantir que o sistema as continue executando.
+- Saber que os processos usados ​​anteriormente contêm coisas para as quais o usuário pode retornar (activities interrompidas) e, portanto, mantê-los ativos.
+- Ajudar o aplicativo a lidar com a interrupção de processos para que o usuário possa retornar às activities mantendo seus estados anteriores restaurados.
+- Fornecer uma maneira para os aplicativos implementarem fluxos de usuários entre si e para o sistema coordenar esses fluxos. (Sendo o exemplo mais clássico o share).
+
+Uma activity é implementada como uma subclasse da classe [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1), a qual será abordada em detalhes a seguir.
+
+
+
+
+
 
 <h2>Services</h2>
 
