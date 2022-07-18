@@ -107,8 +107,8 @@ Uma activity possui essencialmente quatro estados:
   <tr>
     <td><img  width="300" height="150" src='http://i.stack.imgur.com/dioLI.png'/></td>
     
-    <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </br>
-Phasellus bibendum aliquet erat, ut ornare purus malesuada et.</td> 
+  <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </br>
+      Phasellus bibendum aliquet erat, ut ornare purus malesuada et.</td> 
   </tr>
  
 </table>
