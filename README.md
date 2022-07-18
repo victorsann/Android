@@ -99,12 +99,14 @@ As activities em um sistema Android são agrupadas seguindo o modelo de [Stack](
 
 Uma activity possui essencialmente quatro states:
 
-  <img align="left" style="width: 250px;" src="https://user-images.githubusercontent.com/61476935/179614835-f18ee0ca-a3a6-43f8-a02e-58e7c1f91f56.png">
-  
   <h4>Active</h4>
 
   Caso uma activity esteja em primeiro plano (na posição mais acima da stack atual), seus state é definido como <i>active</i> ou <i>running</i>, sendo, normalmente, a activity com a qual o usuário está interegindo.
   
+
+  <img align="left" style="width: 250px;" src="https://user-images.githubusercontent.com/61476935/179614835-f18ee0ca-a3a6-43f8-a02e-58e7c1f91f56.png">
+  
+
   <h4>Visible</h4>
 
   Caso uma activity tenha perdido o foco, mas ainda esteja sendo apresentada ao usuário, seu state é definido como <i>visible</i>. Alguns exemplos deste caso são: quando uma nova activity cujo espaço não equivalha a totalidade da tela é acessado; quando uma outra activity se posiciona acima na stack; ou ou a atividade em si não é focalizável na janela atual. Esse state mantém a activity completamente ativa, mantendo todas as informações anexadas ao gerenciador de janelas.
