@@ -89,17 +89,15 @@ Quase todas as atividades interagem com o usuário, logo a classe Activity se en
 
 <h2>Stack</h2>
 
-As atividades em um sistema Android são agrupadas seguindo o modelo de [Stacks](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura em uma <i>task</i>. 
-  <img align="right" style="width: 250px;" src="https://user-images.githubusercontent.com/61476935/179646952-ac018b2e-97d3-417c-b36b-505bb55f49e4.png">
-Quando uma atividade é inicializada, ela é posicionada sobre a stack atual, passando a estar em execução; a atividade anterior sempre permanece abaixo na stack, compondo a <i>back stack</i>. Uma atividade que faz parte da back stack não retorna ao primeiro plano até que a nova atividade seja encerrada. É possível que haja uma ou multiplas stacks visíveis em uma tela.
+As atividades em um sistema Android são agrupadas seguindo o modelo de [Stacks](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura em uma <i>task</i>. Quando uma atividade é inicializada, ela é posicionada sobre a stack atual, passando a estar em execução; a atividade anterior sempre permanece abaixo na stack, compondo a <i>back stack</i>. 
+
+<img align="right" style="width: 350px;" src="https://user-images.githubusercontent.com/61476935/179646952-ac018b2e-97d3-417c-b36b-505bb55f49e4.png">
+
+Uma atividade que faz parte da back stack não retorna ao primeiro plano até que a nova atividade seja encerrada. É possível que haja uma ou multiplas stacks visíveis em uma tela.
 
 A tela inicial do dispositivo é o ponto de partida para a maioria das tasks. Quando um aplicativo é acessado, sua task (conjunto de atividades) fica em primeiro plano. Se não existir nenhuma task para o aplicativo (o aplicativo não foi usado recentemente), uma nova task será criada inicializando a tela inicial do app.
 
-As atividades na stack nunca são reorganizadas, apenas sofrem push quando acessadas, ou pop, quando retirada da pilha ao detectar a interação do usuário com o Back button ou gesture. A figura a seguir ilustra esse comportamento com o progresso das atividades acessadas e removidas da stack:
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/61476935/179626472-e576507e-c17d-4bc3-9a5a-2bfd91465c52.png">
-</div>
+As atividades na stack nunca são reorganizadas, apenas sofrem push quando acessadas, ou pop, quando retirada da pilha ao detectar a interação do usuário com o Back button ou gesture.
 
 <h2>Activity Lifecycle</h2>
 
