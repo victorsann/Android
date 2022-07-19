@@ -101,25 +101,25 @@ As atividades na stack nunca são reorganizadas, apenas sofrem push quando acess
 
 <h2>Activity Lifecycle</h2>
 
-Uma atividade possui essencialmente quatro estados, os quais definem em que posição a mesma se encontra dentro de sua task:
+Uma atividade possui essencialmente quatro estados:
 
-  <h3>Active</h3>
+<h3>Active</h3>
 
-  Caso uma atividade esteja em primeiro plano (na posição mais acima da stack atual), seus estado é definido como <i>active</i> ou <i>running</i>, sendo, normalmente, a atividade com a qual o usuário está interegindo.
+Caso uma atividade esteja em primeiro plano (na posição mais acima da stack atual), seus estado é definido como <i>active</i> ou <i>running</i>, sendo, normalmente, a atividade com a qual o usuário está interegindo.
 
-  <img align="left" style="width: 250px;" src="https://user-images.githubusercontent.com/61476935/179614835-f18ee0ca-a3a6-43f8-a02e-58e7c1f91f56.png">
+<img align="left" style="width: 250px;" src="https://user-images.githubusercontent.com/61476935/179614835-f18ee0ca-a3a6-43f8-a02e-58e7c1f91f56.png">
   
-  <h3>Visible</h3>
+<h3>Visible</h3>
+ 
+Caso uma atividade tenha perdido o foco, mas ainda esteja sendo apresentada ao usuário, seu estado é definido como <i>visible</i>. Alguns exemplos deste caso são: quando uma nova atividade cujo espaço não equivalha a totalidade da tela é acessado; quando uma outra atividade se posiciona acima na stack; ou a atividade em si não é focalizável na janela atual. Esse estado mantém a atividade completamente ativa, mantendo todas as informações anexadas ao gerenciador de janelas.
 
-  Caso uma atividade tenha perdido o foco, mas ainda esteja sendo apresentada ao usuário, seu estado é definido como <i>visible</i>. Alguns exemplos deste caso são: quando uma nova atividade cujo espaço não equivalha a totalidade da tela é acessado; quando uma outra atividade se posiciona acima na stack; ou a atividade em si não é focalizável na janela atual. Esse estado mantém a atividade completamente ativa, mantendo todas as informações anexadas ao gerenciador de janelas.
+<h3>Stopped</h3>
 
-  <h3>Stopped</h3>
+Se uma atividade for completamente obscurecida por outra, o estado desta passa a ser <i>stopped</i> ou <i>hidden</i>. Ela ainda retém todas as informações, no entanto, não é mais visível, portanto, sua janela fica oculta e geralmente será eliminada pelo sistema quando a memória for necessária em outro lugar
 
-  Se uma atividade for completamente obscurecida por outra, o estado desta passa a ser <i>stopped</i> ou <i>hidden</i>. Ela ainda retém todas as informações, no entanto, não é mais visível, portanto, sua janela fica oculta e geralmente será eliminada pelo sistema quando a memória for necessária em outro lugar
+<h3>Destroyed</h3>
 
-  <h3>Destroyed</h3>
-
-  O sistema pode descartar uma atividade da memória pedindo que ela termine ou simplesmente eliminando seu processo, a tornando <i>destroyed</i>. Quando for exibida novamente para o usuário, ela deve ser completamente reiniciada, retomando o estado anterior.
+O sistema pode descartar uma atividade da memória pedindo que ela termine ou simplesmente eliminando seu processo, a tornando <i>destroyed</i>. Quando for exibida novamente para o usuário, ela deve ser completamente reiniciada, retomando o estado anterior.
   
 O diagrama a seguir ilustra como o ciclo de vida de uma atividade deve se comportar:
 
