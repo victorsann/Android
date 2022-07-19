@@ -126,6 +126,13 @@ O diagrama a seguir ilustra como o ciclo de vida de uma atividade deve se compor
   <img src="https://user-images.githubusercontent.com/61476935/179652997-28a860c2-f16a-4580-8e76-0447b53348f1.png">
 </div>
 
+Dentro do ciclo de vida de uma tela, é importante ficar as inicializações e finalizações de cada periodo:
+
+- O clico completo acontece entre a primeira chamada do método onCreate() e a última chamada do onDestroy(). Uma atividade fará toda a configuração do estado "global" em onCreate() e liberará todos os recursos restantes em onDestroy().
+
+- O tempo de vida visível de uma atividade acontece entre a chamada do método onStart() até uma chamada correspondente ao método onStop(). Durante esse tempo, o usuário pode ver a atividade na tela, embora não esteja em primeiro plano. Ambos os métodos podem ser chamados várias vezes, à medida que a atividade se torna visível e oculta para o usuário.
+
+- O tempo de vida em primeiro plano de uma atividade acontece entre a chamada do método onResume() até uma chamada correspondente ao método onPause(). Durante este periodo a atividade fica visível, ativa e interagindo com o usuário. Uma atividade pode frequentemente ficar entre os estados resumed e paused - por exemplo, quando o dispositivo entra em suspensão, quando um resultado de atividade é entregue, quando uma nova intenção é entregue - portanto, o código nesses métodos deve ser bastante leve.
 
 <h1>Services</h1>
 
