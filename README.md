@@ -104,7 +104,7 @@ Uma atividade possui essencialmente quatro estados:
 
 <h3>Active</h3>
 
-Caso uma atividade esteja em primeiro plano (na posição mais acima da stack atual), seus estado é definido como <i>active</i> ou <i>running</i>, sendo, normalmente, a atividade com a qual o usuário está interegindo.
+Caso uma atividade esteja em primeiro plano (na posição mais acima da stack atual), seu estado é definido como <i>active</i> ou <i>running</i>, sendo esta a atividade com a qual o usuário está interegindo.
 
 <img align="left" style="width: 250px;" src="https://user-images.githubusercontent.com/61476935/179614835-f18ee0ca-a3a6-43f8-a02e-58e7c1f91f56.png">
   
@@ -114,7 +114,7 @@ Caso uma atividade tenha perdido o foco, mas ainda esteja sendo apresentada ao u
 
 <h3>Stopped</h3>
 
-Se uma atividade for completamente obscurecida por outra, o estado desta passa a ser <i>stopped</i> ou <i>hidden</i>. Ela ainda retém todas as informações, no entanto, não é mais visível, portanto, sua janela fica oculta e geralmente será eliminada pelo sistema quando a memória for necessária em outro lugar
+Se uma atividade for completamente obscurecida por outra, o estado desta passa a ser <i>stopped</i> ou <i>hidden</i>. Ela ainda retém todas as informações, no entanto, não é mais visível, logo, sua janela fica oculta e geralmente será eliminada pelo sistema quando a memória for necessária em outro lugar
 
 <h3>Destroyed</h3>
 
@@ -123,7 +123,7 @@ O sistema pode descartar uma atividade da memória pedindo que ela termine ou si
 O diagrama a seguir ilustra como o ciclo de vida de uma atividade deve se comportar:
 
 <div align="center">
-  <img src="">
+  <img src="https://user-images.githubusercontent.com/61476935/179652997-28a860c2-f16a-4580-8e76-0447b53348f1.png">
 </div>
 
 
