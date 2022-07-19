@@ -66,7 +66,7 @@ As funções das atividades também incluem facilitar as seguintes interações 
 
 Uma atividade é implementada como uma subclasse da classe [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1), a qual será abordada em detalhes a seguir.
 
-<h1>A Classe Activity</h1>
+<h2>A Classe Activity</h2>
 
 Quase todas as atividades interagem com o usuário, logo a classe Activity se encarrega de criar métodos para lidar com as diferentes formas de interação e seus resultados. Tais métodos definem o ciclo de vida de uma atividade, e estes são:
 
@@ -101,7 +101,7 @@ As atividades na stack nunca são reorganizadas, apenas sofrem push quando acess
 
 <h2>Activity Lifecycle</h2>
 
-Uma atividade possui essencialmente quatro estados:
+Uma atividade possui essencialmente quatro estados, os quais definem em que posição a mesma se encontra dentro de sua task:
 
   <h3>Active</h3>
 
