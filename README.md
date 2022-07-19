@@ -89,9 +89,9 @@ Quase todas as atividades interagem com o usuário, logo a classe Activity se en
 
 <h2>Stack</h2>
 
-As atividades em um sistema Android são agrupadas seguindo o modelo de [Stacks](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura em uma <i>task</i>. Quando uma atividade é inicializada, ela é posicionada sobre a stack atual, passando a estar em execução; a atividade anterior sempre permanece abaixo na stack, compondo a <i>back stack</i>. 
+<img align="right" style="width: 400px;" src="https://user-images.githubusercontent.com/61476935/179646952-ac018b2e-97d3-417c-b36b-505bb55f49e4.png">
 
-<img align="right" style="width: 350px;" src="https://user-images.githubusercontent.com/61476935/179646952-ac018b2e-97d3-417c-b36b-505bb55f49e4.png">
+As atividades em um sistema Android são agrupadas seguindo o modelo de [Stacks](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura em uma <i>task</i>. Quando uma atividade é inicializada, ela é posicionada sobre a stack atual, passando a estar em execução; a atividade anterior sempre permanece abaixo na stack, compondo a <i>back stack</i>. 
 
 Uma atividade que faz parte da back stack não retorna ao primeiro plano até que a nova atividade seja encerrada. É possível que haja uma ou multiplas stacks visíveis em uma tela.
 
