@@ -75,11 +75,9 @@ A tela inicial do dispositivo é o ponto de partida para a maioria das tasks. Qu
 
 As atividades na stack nunca são reorganizadas, apenas sofrem push quando acessadas, ou pop, quando retiradas da pilha caso uma interação do usuário com o Back button ou gesture seja detectada. Quando uma atividade é encerrada, sua antecedente se torna ativa, e o estado anterior da interface é retomado.
 
-Uma atividade é implementada como uma subclasse da [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1) class, a qual será abordada em detalhes a seguir.
+<h2>Activity Lifecycle</h2>
 
-<h2>A Classe Activity</h2>
-
-Quase todas as atividades interagem com o usuário, logo a classe Activity se encarrega de criar métodos para lidar com as diferentes formas de interação e seus resultados. Tais métodos definem o ciclo de vida de uma atividade, e estes são:
+Uma atividade é implementada como uma subclasse da [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1) class, e como quase todas as atividades interagem com o usuário, a classe Activity se encarrega de criar métodos para lidar com as diferentes formas de interação e seus resultados. Tais métodos definem o ciclo de vida de uma atividade, e estes são:
 
     public class Activity extends ApplicationContext {
       
@@ -98,9 +96,7 @@ Quase todas as atividades interagem com o usuário, logo a classe Activity se en
         protected void onDestroy();
     }
 
-<h2>Activity Lifecycle</h2>
-
-Uma atividade possui essencialmente quatro estados:
+O ciclo de vida de uma atividade é essencialmente composto por quatro estados:
 
 <h3>Active</h3>
 
