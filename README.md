@@ -77,7 +77,7 @@ As atividades na stack nunca são reorganizadas, apenas sofrem push quando acess
 
 <h2>Activity Lifecycle</h2>
 
-Uma atividade é implementada como uma subclasse da [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1) class, e como quase todas as atividades interagem com o usuário, a classe Activity se encarrega de criar métodos para lidar com as diferentes formas de interação e seus resultados. Tais métodos definem o ciclo de vida de uma atividade, e estes são:
+Uma atividade é implementada como uma subclasse da [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1) class, e como quase todas as atividades interagem com o usuário, a classe Activity se encarrega de criar métodos para lidar com as diferentes formas de interação e seus resultados. Tais métodos definem o ciclo de vida de uma atividade:
 
     public class Activity extends ApplicationContext {
       
@@ -106,7 +106,7 @@ Caso uma atividade esteja em primeiro plano (na posição mais acima da stack at
   
 <h3>Visible</h3>
  
-Caso uma atividade tenha perdido o foco, mas ainda esteja sendo apresentada ao usuário, seu estado é definido como <i>visible</i>. Alguns exemplos deste caso são: quando uma nova atividade cujo espaço não equivalha a totalidade da tela é acessado; quando uma outra atividade se posiciona acima na stack; ou a atividade em si não é focalizável na janela atual. Esse estado mantém a atividade completamente ativa, mantendo todas as informações anexadas ao gerenciador de janelas.
+Caso uma atividade tenha perdido o foco, mas ainda esteja sendo apresentada ao usuário, seu estado é definido como <i>visible</i>. Alguns exemplos deste caso são: quando uma nova atividade cujo espaço não equivalha a totalidade da tela é acessada (dialog ou popUp); quando uma outra atividade se posiciona acima na stack; ou a atividade em si não é focalizável na janela atual. Esse estado mantém a atividade completamente ativa, mantendo todas as informações anexadas ao gerenciador de janelas.
 
 <h3>Stopped</h3>
 
@@ -122,11 +122,11 @@ O diagrama a seguir ilustra como o ciclo de vida de uma atividade deve se compor
   <img src="https://user-images.githubusercontent.com/61476935/179652997-28a860c2-f16a-4580-8e76-0447b53348f1.png">
 </div>
 
-Dentro do ciclo de vida de uma tela, é importante ficar as inicializações e finalizações de cada periodo:
+Dentro do ciclo de vida de uma tela, é importante ficar atento as inicializações e finalizações de cada periodo:
 
-- O ciclo completo acontece entre a primeira chamada do método onCreate() e a última chamada do onDestroy(). Uma atividade fará toda a configuração do estado "global" em onCreate(), liberando todos os recursos restantes em onDestroy().
+- O ciclo completo acontece entre a primeira chamada do método onCreate() e a primeira chamada do onDestroy(). Uma atividade fará toda a configuração do estado "global" em onCreate(), liberando todos os recursos restantes em onDestroy().
 
-- O tempo de vida visível de uma atividade acontece entre a chamada do método onStart() e uma chamada correspondente ao método onStop(). Durante este periodo, o usuário pode ver a atividade na tela, embora não esteja em primeiro plano. Ambos os métodos podem ser chamados várias vezes, à medida que a atividade se torna visível e oculta para o usuário.
+- O tempo de vida visível de uma atividade acontece entre a chamada do método onStart() e uma chamada correspondente ao método onStop(). Durante este periodo o usuário pode ver a atividade na tela, embora não esteja em primeiro plano. Ambos os métodos podem ser chamados várias vezes à medida que a atividade se torna visível e oculta para o usuário.
 
 - O tempo de vida em primeiro plano de uma atividade acontece entre a chamada do método onResume() e uma chamada correspondente ao método onPause(). Durante este periodo a atividade fica visível, ativa e interagindo com o usuário. Uma atividade pode frequentemente ficar entre os estados resumed e paused - por exemplo, quando o dispositivo entra em suspensão, quando um resultado de atividade é entregue, quando uma nova intenção é entregue - portanto, o código nesses métodos deve ser bastante leve.
 
