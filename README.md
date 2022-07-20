@@ -53,18 +53,29 @@ Cada component serve a um propósito distinto e possui um ciclo de vida distinto
 
 <h1>Activities</h1>
 
-Uma <i>atividade</i> é um fragmento da aplicação com qual o usuário pode interagir. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura desses emails e outra que permite responde-los. Ou seja, as atividade trabalham para criar uma experiência coesa das funções de uma aplicação. 
+Uma <i>activity</i> é um fragmento da aplicação com qual o usuário pode interagir. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura desses emails e outra que permite responde-los. Ou seja, as atividade trabalham para criar uma experiência coesa das funções de uma aplicação. 
 
-Também cabe destacar que uma atividade pode ser inicializada por um outro app, quando permitido. Um exemplo seria o acesso ao app da câmera ou de armazenamento de arquivos, em casos em que o email possar conter um recurso provido por um deles.
+Também cabe destacar que uma atividade pode ser inicializada por um outro app, quando permitido. Um exemplo seria o acesso ao app da câmera ou de armazenamento de arquivos, em casos em que o email possa conter um recurso provido por um deles.
 
 As funções das atividades também incluem facilitar as seguintes interações entre o sistema e o app:
 
-- Acompanhar as funções de interesse do usuário no momento (o que está em tela) para garantir que o sistema as continue executando.
+- Acompanhar as funções de interesse do usuário no momento (o que está em tela) para garantir que o sistema continue sua execução.
 - Saber que os processos usados ​​anteriormente contêm coisas para as quais o usuário pode retornar (atividades interrompidas) e, portanto, mantê-los ativos.
 - Ajudar o aplicativo a lidar com a interrupção de processos para que o usuário possa retornar às atividades mantendo seus estados anteriores restaurados.
 - Fornecer uma maneira para os aplicativos implementarem fluxos de usuários entre si e para o sistema coordenar esses fluxos. (Sendo o exemplo mais clássico o share).
 
-Uma atividade é implementada como uma subclasse da classe [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1), a qual será abordada em detalhes a seguir.
+<h2>Stack</h2>
+
+As atividades em um sistema Android são agrupadas seguindo o modelo de [Stacks](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura em uma <i>task</i>. Quando uma atividade é inicializada, ela é posicionada sobre a stack atual, passando a estar em execução; <img align="right" style="width: 400px;" src="https://user-images.githubusercontent.com/61476935/179646952-ac018b2e-97d3-417c-b36b-505bb55f49e4.png">
+a atividade anterior sempre permanece abaixo na stack, compondo a <i>back stack</i>. 
+
+Uma atividade que faz parte da back stack não retorna ao primeiro plano até que a nova atividade seja encerrada. É possível que haja uma ou multiplas stacks visíveis em uma tela.
+
+A tela inicial do dispositivo é o ponto de partida para a maioria das tasks. Quando um aplicativo é acessado, sua task (conjunto de atividades) fica em primeiro plano. Se não existir nenhuma task para o aplicativo (o aplicativo não foi usado recentemente), uma nova task será criada a partir da tela inicial do app.
+
+As atividades na stack nunca são reorganizadas, apenas sofrem push quando acessadas, ou pop, quando retiradas da pilha caso uma interação do usuário com o Back button ou gesture seja detectada. Quando uma atividade é encerrada, sua antecedente se torna ativa, e o estado anterior da interface é retomado.
+
+Uma atividade é implementada como uma subclasse da [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1) class, a qual será abordada em detalhes a seguir.
 
 <h2>A Classe Activity</h2>
 
@@ -86,17 +97,6 @@ Quase todas as atividades interagem com o usuário, logo a classe Activity se en
     
         protected void onDestroy();
     }
-
-<h2>Stack</h2>
-
-As atividades em um sistema Android são agrupadas seguindo o modelo de [Stacks](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura em uma <i>task</i>. Quando uma atividade é inicializada, ela é posicionada sobre a stack atual, passando a estar em execução; <img align="right" style="width: 400px;" src="https://user-images.githubusercontent.com/61476935/179646952-ac018b2e-97d3-417c-b36b-505bb55f49e4.png">
-a atividade anterior sempre permanece abaixo na stack, compondo a <i>back stack</i>. 
-
-Uma atividade que faz parte da back stack não retorna ao primeiro plano até que a nova atividade seja encerrada. É possível que haja uma ou multiplas stacks visíveis em uma tela.
-
-A tela inicial do dispositivo é o ponto de partida para a maioria das tasks. Quando um aplicativo é acessado, sua task (conjunto de atividades) fica em primeiro plano. Se não existir nenhuma task para o aplicativo (o aplicativo não foi usado recentemente), uma nova task será criada a partir da tela inicial do app.
-
-As atividades na stack nunca são reorganizadas, apenas sofrem push quando acessadas, ou pop, quando retiradas da pilha caso uma interação do usuário com o Back button ou gesture seja detectada. Quando uma atividade é encerrada, sua antecedente se torna ativa, e o estado anterior da interface é retomado.
 
 <h2>Activity Lifecycle</h2>
 
