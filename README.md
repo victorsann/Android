@@ -53,9 +53,13 @@ Cada component serve a um propósito distinto e possui um ciclo de vida distinto
 
 <h1>Activities</h1>
 
-Uma <i>activity</i> é um fragmento da aplicação com qual o usuário pode interagir. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura desses emails e outra que permite responde-los. Ou seja, as atividade trabalham para criar uma experiência coesa das funções de uma aplicação. 
+Uma <i>activity</i> é um fragmento da aplicação com qual o usuário pode interagir. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura destes e outra que permite responde-los. Ou seja, as atividade trabalham para criar uma experiência coesa das funções de uma aplicação. 
 
-Também cabe destacar que uma atividade pode ser inicializada por um outro app, quando permitido. Um exemplo seria o acesso ao app da câmera ou de armazenamento de arquivos, em casos em que o email possa conter um recurso provido por um deles.
+A maioria dos aplicativos contém várias telas, ou seja, várias atividades. Normalmente, uma atividade em um aplicativo é especificada como a <i>MainActivity</i>, sendo a tela inicial do aplicativo. Cada atividade pode então iniciar outra atividade para realizar ações distintas. Porém, diferentemente da sua contraparte desktop, mobile-apps nem sempre são inicializados de um mesmo ponto. Pelo contrário, a jornada do usuário normalmente se inicia de forma não determinada. 
+
+Retornando ao exemplo do Gmail App, pode se notar diferentes formas de inicializa-lo, sendo a mais direta delas através da sua MainActivity. Por outro lado, quando seu acesso está atrelado a outro app, a MainActivity não será necessariamente utilizada, sendo possível acessar a especificamente a task de escrita e envio de e-mails. 
+
+A classe [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1) foi desenvolvida para falicitar tais necessidades. Quando um aplicativo invoca outro, o que de fato é invocado é uma de suas atividades, não o aplicativo como um todo.
 
 As funções das atividades também incluem facilitar as seguintes interações entre o sistema e o app:
 
