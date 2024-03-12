@@ -6,23 +6,23 @@
 
 <p align="justify">O Android é um sistema operacional mobile, baseado em Linux, criado pela Google em 2009. Possuindo mais de dois bilhões de usuários e estando presente em mais de vinte e quatro mil modelos de dispositivos, desde smartphones e smartwatches a televisores e veículos, o sistema ganhou a alcunha de mais popular do mundo. O fato é que sua história se mistura com a histório de criação e adoção em massa dos smartphones, e por consequência, do desenvolvimento mobile.</p>
 
-Sendo o principal rival do IOS, e muitas vezes único, o sistema Android passou a ser adotado pela maior parte das empresas que desenvolvem aparelhos móveis. Empresas como Samsung, Motorola, Xiaomi e muitas outras adotaram o OS da Google a partir de sua entrada no mercado. Contudo, sua popularidade se dá muito graças a pirataria, resultado da sua já popular acessibilidade.
+<p align="justify">Sendo o principal rival do IOS, e muitas vezes único, o sistema Android passou a ser adotado pela maior parte das empresas que desenvolvem aparelhos móveis. Empresas como Samsung, Motorola, Xiaomi e muitas outras adotaram o OS da Google a partir de sua entrada no mercado. Contudo, sua popularidade se dá muito graças a pirataria, resultado da sua já popular acessibilidade.</p>
 
 <h1>Guia de Desenvolvimento</h1>
 
-Tendo apresentado seus números, é possível passar a pensar no apecto que supre tal montante: o desenvolvimento. O Android SDK faz parte ou impacta a vida da maior parte dos desenvolvedores mobile, sejam especialistas, generalistas ou criadores de aplicações híbridas, o que contabiliza mais de 70% da stack.
+<p align="justify">Tendo apresentado seus números, é possível passar a pensar no apecto que supre tal montante: o desenvolvimento. O Android SDK faz parte ou impacta a vida da maior parte dos desenvolvedores mobile, sejam especialistas, generalistas ou criadores de aplicações híbridas, o que contabiliza mais de 70% da stack.</p>
 
-A documentação a seguir busca inicialmente introduzir os fundamentos do desenvolvimento de aplicativos Android, priorizando o desenvolvimento mobile, e, posteriormente, se aprofundar em especificidades.
+<p align="justify">A documentação a seguir busca inicialmente introduzir os fundamentos do desenvolvimento de aplicativos Android, priorizando o desenvolvimento mobile, e, posteriormente, se aprofundar em especificidades.</p>
 
 <h1>Application Fundamentals</h1>
 
-Os aplicativos Android podem ser desenvolvidos usando as linguagens [Kotlin](https://github.com/VictorSantos12/Kotlin), [Java]() e C++. As ferramentas do Android SDK compilam seu código junto com quaisquer dados e arquivos de recursos em um APK ou Android App Bundle.
+<p align="justify">Os aplicativos Android podem ser desenvolvidos usando as linguagens [Kotlin](https://github.com/VictorSantos12/Kotlin), [Java]() e C++. As ferramentas do Android SDK compilam seu código junto com quaisquer dados e arquivos de recursos em um APK ou Android App Bundle.</p>
 
-Um package Android, que é um arquivo compactado com um sufixo .apk, contém o conteúdo de um aplicativo Android necessário em tempo de execução e é o arquivo que os dispositivos com tecnologia Android usam para instalar o aplicativo.
+<p align="justify">Um package Android, que é um arquivo compactado com um sufixo .apk, contém o conteúdo de um aplicativo Android necessário em tempo de execução e é o arquivo que os dispositivos com tecnologia Android usam para instalar o aplicativo.</p>
 
-Um Android App Bundle, que pode ser identificado por um arquivo com o sufixo .aab, contém o conteúdo de um projeto de aplicativo Android, incluindo alguns metadados adicionais que não são necessários em tempo de execução. Um AAB é um formato de publicação e não pode ser instalado em dispositivos Android. Ele adia a geração e a assinatura do APK para um estágio posterior. Ao distribuir seu aplicativo por meio do Google Play, por exemplo, os servidores do Google Play geram APKs otimizados que contêm apenas os recursos e o código exigidos por um determinado dispositivo que está solicitando a instalação do aplicativo.
+<p align="justify">Um Android App Bundle, que pode ser identificado por um arquivo com o sufixo .aab, contém o conteúdo de um projeto de aplicativo Android, incluindo alguns metadados adicionais que não são necessários em tempo de execução. Um AAB é um formato de publicação e não pode ser instalado em dispositivos Android. Ele adia a geração e a assinatura do APK para um estágio posterior. Ao distribuir seu aplicativo por meio do Google Play, por exemplo, os servidores do Google Play geram APKs otimizados que contêm apenas os recursos e o código exigidos por um determinado dispositivo que está solicitando a instalação do aplicativo.</p>
 
-Cada aplicativo Android vive em sua própria sendBox, protegida pelos seguintes recursos de segurança:
+<p align="justify">Cada aplicativo Android vive em sua própria sendBox, protegida pelos seguintes recursos de segurança:</p>
 
 - O sistema operacional Android é um sistema Linux multiusuário no qual cada aplicativo é um usuário diferente.<br>
 
@@ -51,13 +51,13 @@ Os App Components são os blocos de construção essenciais de um aplicativo And
 
 Cada component serve a um propósito distinto e possui um ciclo de vida distinto, o qual define como o mesmo é criado e destruído. Os tópicos a seguir descrevem cada um dos quatro em detalhes:
 
-<h1>Activities</h1>
+<h1>a) Activities</h1>
 
 Uma <i>activity</i> é um fragmento da aplicação com qual o usuário pode interagir. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura destes e outra que permite responde-los. Ou seja, as atividade trabalham para criar uma experiência coesa das funções de uma aplicação.
 
 A maioria dos aplicativos contém várias telas, ou seja, várias atividades. Normalmente, uma atividade em um aplicativo é especificada como a <i>MainActivity</i>, sendo a tela inicial do aplicativo. Cada atividade pode então iniciar outra atividade para realizar ações distintas. Porém, diferentemente da sua contraparte desktop, mobile-apps nem sempre são inicializados de um mesmo ponto. Pelo contrário, a jornada do usuário normalmente se inicia de forma não determinada.
 
-Retornando ao exemplo do Gmail App, pode se notar diferentes formas de inicializa-lo, sendo a mais direta delas através da sua MainActivity. Por outro lado, quando seu acesso está atrelado a outro app, a MainActivity não será necessariamente utilizada, sendo possível acessar a especificamente a task de escrita e envio de e-mails.
+Retornando ao exemplo do Gmail App, pode se notar diferentes formas de inicializa-lo, sendo a mais direta delas através da sua MainActivity. Por outro lado, quando seu acesso está atrelado a outro app, a MainActivity não será necessariamente utilizada, sendo possível acessar especificamente a task de escrita e envio de e-mails.
 
 A classe [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1) foi desenvolvida para falicitar tais necessidades. Quando um aplicativo invoca outro, o que de fato é invocado é uma de suas atividades, não o aplicativo como um todo.
 
@@ -65,8 +65,8 @@ As funções das atividades também incluem facilitar as seguintes interações 
 
 - Acompanhar as funções de interesse do usuário no momento (o que está em tela) para garantir que o sistema continue sua execução.
 - Saber que os processos usados ​​anteriormente contêm coisas para as quais o usuário pode retornar (atividades interrompidas) e, portanto, mantê-los ativos.
-- Ajudar o aplicativo a lidar com a interrupção de processos para que o usuário possa retornar às atividades mantendo seus estados anteriores restaurados.
-- Fornecer uma maneira para os aplicativos implementarem fluxos de usuários entre si e para o sistema coordenar esses fluxos. (Sendo o exemplo mais clássico o share).
+- Ajudar o aplicativo a lidar com a interrupção de processos para que o usuário possa retornar às atividades, mantendo seus estados anteriores restaurados.
+- Fornecer uma maneira para os aplicativos implementarem fluxos de usuários entre si, e para o sistema coordenar esses fluxos. (Sendo o exemplo mais clássico o share).
 
 <h2>Stack</h2>
 
@@ -142,4 +142,4 @@ Dentro do ciclo de vida de uma tela, é importante ficar atento as inicializaç�
 
 <h1>The manifest file</h1>
 
-A
+<p align="justify">A</p>
