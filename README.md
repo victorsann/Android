@@ -145,7 +145,7 @@ Desse modo o Android é intencional e explicitamente uma iniciativa de código a
 
 O Android é um sistema operacional baseado no núcleo Linux, ou seja, na base de sua arquitetura está um Kernel Linux. Tal arquitetura decorre da implementação de uma plataforma dedicada, também open source, chamada Android Open System Platform (AOSP), cuja stack de software contém as seguintes camadas:
 
-[img](https://source.android.com/static/images/android_stack.png?hl=pt-br)
+![img](https://source.android.com/static/images/android_stack.png?hl=pt-br)
 
 Sobre cada camada, cabe destacar:
 
