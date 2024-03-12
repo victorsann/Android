@@ -51,24 +51,17 @@ Os App Components são os blocos de construção essenciais de um aplicativo And
 
 Cada component serve a um propósito distinto e possui um ciclo de vida distinto, o qual define como o mesmo é criado e destruído. Os tópicos a seguir descrevem cada um dos quatro em detalhes:
 
-<h1>a) Activities</h1>
+<h1>1) Activities</h1>
 
-Uma <i>activity</i> é um fragmento da aplicação com qual o usuário pode interagir. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura destes e outra que permite responde-los. Ou seja, as atividade trabalham para criar uma experiência coesa das funções de uma aplicação.
+Uma <i>activity</i> é um fragmento da aplicação com qual o usuário pode interagir, a qual possui certa independência dentro da estrutura da aplicação. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura destes e outra que permite responde-los. Ou seja, as atividade trabalham para criar uma experiência coesa das funções de uma aplicação.
 
 A maioria dos aplicativos contém várias telas, ou seja, várias atividades. Normalmente, uma atividade em um aplicativo é especificada como a <i>MainActivity</i>, sendo a tela inicial do aplicativo. Cada atividade pode então iniciar outra atividade para realizar ações distintas. Porém, diferentemente da sua contraparte desktop, mobile-apps nem sempre são inicializados de um mesmo ponto. Pelo contrário, a jornada do usuário normalmente se inicia de forma não determinada.
 
 Retornando ao exemplo do Gmail App, pode se notar diferentes formas de inicializa-lo, sendo a mais direta delas através da sua MainActivity. Por outro lado, quando seu acesso está atrelado a outro app, a MainActivity não será necessariamente utilizada, sendo possível acessar especificamente a task de escrita e envio de e-mails.
 
-A classe [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1) foi desenvolvida para falicitar tais necessidades. Quando um aplicativo invoca outro, o que de fato é invocado é uma de suas atividades, não o aplicativo como um todo.
+Toda activity é subclasse da classe [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1) foi desenvolvida para falicitar tais necessidades. Quando um aplicativo invoca outro, o que de fato é invocado é uma de suas atividades, não o aplicativo como um todo.
 
-As funções das atividades também incluem facilitar as seguintes interações entre o sistema e o app:
-
-- Acompanhar as funções de interesse do usuário no momento (o que está em tela) para garantir que o sistema continue sua execução.
-- Saber que os processos usados ​​anteriormente contêm coisas para as quais o usuário pode retornar (atividades interrompidas) e, portanto, mantê-los ativos.
-- Ajudar o aplicativo a lidar com a interrupção de processos para que o usuário possa retornar às atividades, mantendo seus estados anteriores restaurados.
-- Fornecer uma maneira para os aplicativos implementarem fluxos de usuários entre si, e para o sistema coordenar esses fluxos. (Sendo o exemplo mais clássico o share).
-
-<h2>Stack</h2>
+<h2>a) Stack</h2>
 
 As atividades em um sistema Android são agrupadas seguindo o modelo de [Stacks](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura em uma <i>task</i>. Quando uma atividade é inicializada, ela é posicionada sobre a stack atual, passando a estar em execução; <img align="right" style="width: 400px;" src="https://user-images.githubusercontent.com/61476935/179646952-ac018b2e-97d3-417c-b36b-505bb55f49e4.png">
 a atividade anterior sempre permanece abaixo na stack, compondo a <i>back stack</i>.
@@ -79,7 +72,7 @@ A tela inicial do dispositivo é o ponto de partida para a maioria das tasks. Qu
 
 As atividades na stack nunca são reorganizadas, apenas sofrem push quando acessadas, ou pop, quando retiradas da pilha caso uma interação do usuário com o Back button ou gesture seja detectada. Quando uma atividade é encerrada, sua antecedente se torna ativa, e o estado anterior da interface é retomado.
 
-<h2>Activity Lifecycle</h2>
+<h2>b) Activity Lifecycle</h2>
 
 Uma atividade é implementada como uma subclasse da [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1) class, e como quase todas as atividades interagem com o usuário, a classe Activity se encarrega de criar métodos para lidar com as diferentes formas de interação e seus resultados. Tais métodos definem o ciclo de vida de uma atividade:
 
