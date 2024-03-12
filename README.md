@@ -4,15 +4,15 @@
 <br>
 <img src="https://img.shields.io/static/v1?label=android&message=Mobile-Development&color=green&style=for-the-badge&logo=Android"/>
 
-<p align="justify">O Android é um sistema operacional mobile, baseado em Linux, criado pela Google em 2009. Possuindo mais de dois bilhões de usuários e estando presente em mais de vinte e quatro mil modelos de dispositivos, desde smartphones e smartwatches a televisores e veículos, o sistema ganhou a alcunha de mais popular do mundo. O fato é que sua história se mistura com a histório de criação e adoção em massa dos smartphones, e por consequência, do desenvolvimento mobile.</p>
+<!-- <p align="justify">O Android é um sistema operacional mobile, baseado em Linux, criado pela Google em 2009. Possuindo mais de dois bilhões de usuários e estando presente em mais de vinte e quatro mil modelos de dispositivos, desde smartphones e smartwatches a televisores e veículos, o sistema ganhou a alcunha de mais popular do mundo. O fato é que sua história se mistura com a histório de criação e adoção em massa dos smartphones, e por consequência, do desenvolvimento mobile.</p>
 
 <p align="justify">Sendo o principal rival do IOS, e muitas vezes único, o sistema Android passou a ser adotado pela maior parte das empresas que desenvolvem aparelhos móveis. Empresas como Samsung, Motorola, Xiaomi e muitas outras adotaram o OS da Google a partir de sua entrada no mercado. Contudo, sua popularidade se dá muito graças a pirataria, resultado da sua já popular acessibilidade.</p>
 
-<!-- <h1>Guia de Desenvolvimento</h1>
+<h1>Guia de Desenvolvimento</h1>
 
 <p align="justify">Tendo apresentado seus números, é possível passar a pensar no apecto que supre tal montante: o desenvolvimento. O Android SDK faz parte ou impacta a vida da maior parte dos desenvolvedores mobile, sejam especialistas, generalistas ou criadores de aplicações híbridas, o que contabiliza mais de 70% da stack.</p>
 
-<p align="justify">A documentação a seguir busca inicialmente introduzir os fundamentos do desenvolvimento de aplicativos Android, priorizando o desenvolvimento mobile, e, posteriormente, se aprofundar em especificidades.</p> -->
+<p align="justify">A documentação a seguir busca inicialmente introduzir os fundamentos do desenvolvimento de aplicativos Android, priorizando o desenvolvimento mobile, e, posteriormente, se aprofundar em especificidades.</p>
 
 <h1>Fundamentos de uma Aplicação</h1>
 
@@ -59,7 +59,7 @@ Retornando ao exemplo do Gmail App, pode se notar diferentes formas de inicializ
 
 Toda activity é subclasse da classe [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1) foi desenvolvida para falicitar tais necessidades. Quando um aplicativo invoca outro, o que de fato é invocado é uma de suas atividades, não o aplicativo como um todo.
 
-<!-- <h2>a) Stack</h2>
+<h2>a) Stack</h2>
 
 As atividades em um sistema Android são agrupadas seguindo o modelo de [Stacks](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura em uma <i>task</i>. Quando uma atividade é inicializada, ela é posicionada sobre a stack atual, passando a estar em execução; <img align="right" style="width: 400px;" src="https://user-images.githubusercontent.com/61476935/179646952-ac018b2e-97d3-417c-b36b-505bb55f49e4.png">
 a atividade anterior sempre permanece abaixo na stack, compondo a <i>back stack</i>.
@@ -68,8 +68,8 @@ Uma atividade que faz parte da back stack não retorna ao primeiro plano até qu
 
 A tela inicial do dispositivo é o ponto de partida para a maioria das tasks. Quando um aplicativo é acessado, sua task (conjunto de atividades) fica em primeiro plano. Se não existir nenhuma task para o aplicativo (o aplicativo não foi usado recentemente), uma nova task será criada a partir da tela inicial do app.
 
-As atividades na stack nunca são reorganizadas, apenas sofrem push quando acessadas, ou pop, quando retiradas da pilha caso uma interação do usuário com o Back button ou gesture seja detectada. Quando uma atividade é encerrada, sua antecedente se torna ativa, e o estado anterior da interface é retomado. -->
-<!--
+As atividades na stack nunca são reorganizadas, apenas sofrem push quando acessadas, ou pop, quando retiradas da pilha caso uma interação do usuário com o Back button ou gesture seja detectada. Quando uma atividade é encerrada, sua antecedente se torna ativa, e o estado anterior da interface é retomado.
+
 <h2>b) Activity Lifecycle</h2>
 
 Uma atividade é implementada como uma subclasse da [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1) class, e como quase todas as atividades interagem com o usuário, a classe Activity se encarrega de criar métodos para lidar com as diferentes formas de interação e seus resultados. Tais métodos definem o ciclo de vida de uma atividade:
@@ -123,7 +123,7 @@ Dentro do ciclo de vida de uma tela, é importante ficar atento as inicializaç�
 
 - O tempo de vida visível de uma atividade acontece entre a chamada do método onStart() e uma chamada correspondente ao método onStop(). Durante este periodo o usuário pode ver a atividade na tela, embora não esteja em primeiro plano. Ambos os métodos podem ser chamados várias vezes à medida que a atividade se torna visível e oculta para o usuário.
 
-- O tempo de vida em primeiro plano de uma atividade acontece entre a chamada do método onResume() e uma chamada correspondente ao método onPause(). Durante este periodo a atividade fica visível, ativa e interagindo com o usuário. Uma atividade pode frequentemente ficar entre os estados resumed e paused - por exemplo, quando o dispositivo entra em suspensão, quando um resultado de atividade é entregue, quando uma nova intenção é entregue - portanto, o código nesses métodos deve ser bastante leve. -->
+- O tempo de vida em primeiro plano de uma atividade acontece entre a chamada do método onResume() e uma chamada correspondente ao método onPause(). Durante este periodo a atividade fica visível, ativa e interagindo com o usuário. Uma atividade pode frequentemente ficar entre os estados resumed e paused - por exemplo, quando o dispositivo entra em suspensão, quando um resultado de atividade é entregue, quando uma nova intenção é entregue - portanto, o código nesses métodos deve ser bastante leve.
 
 <h2>b) Services</h2>
 
@@ -133,4 +133,140 @@ Dentro do ciclo de vida de uma tela, é importante ficar atento as inicializaç�
 
 <h1>The manifest file</h1>
 
-<p align="justify">A</p>
+<p align="justify">A</p> -->
+
+O Sistema Operacional
+
+Compreender o Android como sistema operacional perpassa o entendimento de como este é mantido e quem está por trás de seu desenvolvimento e gerenciamento. A princípio, o Android é um produto desenvolvido pelo grupo de empresas conhecido como Open Handset Alliance (OHA), liderado pela Google. O produto engloba uma série de subprojetos de software, gerido pelo Android Open Source Project (AOSP), por meio do Programa de compatibilidade do Android. Tal programa permite que qualquer pessoa que contribua para o desenvolvimento do produto faça parte de um ecossistema compartilhado.
+
+Desse modo o Android é intencional e explicitamente uma iniciativa de código aberto, que pode atender qualquer pessoa para qualquer finalidade, desde que legítima.
+
+Visão Geral da Arquitetura
+
+O Android é um sistema operacional baseado no núcleo Linux, ou seja, na base de sua arquitetura está um Kernel Linux. Tal arquitetura decorre da implementação de uma plataforma dedicada, também open source, chamada Android Open System Platform (AOSP), cuja stack de software contém as seguintes camadas:
+
+Sobre cada camada, cabe destacar:
+
+1. Linux Kernel: O kernel é a parte central de qualquer sistema operacional e se comunica com o hardware subjacente em um dispositivo, sendo nesse caso um Kernel Linux, comum a sistemas operacionais baseados em Unix.
+
+2. Daemons e Bibliotecas Nativas: No Android, um daemon é um processo contínuo em segundo plano que executa várias tarefas no nível do sistema, dentre elas a execução de builds e a inicialização de bibliotecas. As bibliotecas nativas, por sua vez, têm por função interagir diretamente com o kernel ou outras interfaces e não dependem de uma implementação HAL baseada no espaço do usuário.
+
+3. HAL: Um HAL é uma camada de abstração com uma interface padrão para os fornecedores de hardware implementarem. Sua principal função é expor as capacidades do hardware do dispositivo para APIs de alto nível, permitindo implementar funcionalidades sem afetá-las ou modificá-las.
+
+4. Android Runtime: O android runtime é um ambiente de tempo de execução Java fornecido pelo AOSP, que realiza a tradução do bytecode do aplicativo em instruções específicas do processador que são executadas pelo ambiente de tempo de execução do dispositivo.
+
+5. Serviços do Sistema: Os serviços do sistema são componentes modulares e focados, como system_server, SurfaceFlinger e MediaService. A funcionalidade exposta pela API da estrutura do Android se comunica com os serviços do sistema para acessar o hardware subjacente.
+
+6. Android Framework: O android framework é um grupo de classes Java, interfaces e outros códigos pré-compilados sobre os quais os aplicativos são construídos. Partes da estrutura são acessíveis publicamente por meio do uso da API do Android. Outras partes da estrutura estão disponíveis apenas para OEMs por meio do uso das APIs do sistema. O código da estrutura do Android é executado dentro do processo de um aplicativo.
+
+7. API do Android: A API do Android é a API disponível publicamente para desenvolvedores de aplicativos Android terceirizados.
+
+8. API do Sistema: A API do sistema representa as APIs do Android disponíveis apenas para parceiros e OEMs (Original Equipment Manufacturer) para inclusão em aplicativos agrupados. Essas APIs são marcadas como @SystemApi no código-fonte.
+
+9. Aplicativo: Acima das demais camadas se encontram os aplicativos, dentre os quais destacam-se:
+
+Aplicativo Android: Um aplicativo criado exclusivamente usando a API do Android. A Google Play Store é amplamente usada para encontrar e baixar aplicativos Android, embora existam muitas outras alternativas. Em alguns casos, um fabricante de dispositivos pode querer pré-instalar um aplicativo Android para dar suporte à funcionalidade principal do dispositivo.
+
+Aplicativo Privilegiado: Um aplicativo criado usando uma combinação das APIs do Android e do sistema. Esses aplicativos devem ser pré-instalados como aplicativos privilegiados em um dispositivo.
+
+Aplicativo do Fabricante do Dispositivo: Um aplicativo criado usando uma combinação de API do Android, API do sistema e acesso direto à implementação da estrutura do Android. Como um fabricante de dispositivos pode acessar diretamente APIs instáveis ​​na estrutura do Android, esses aplicativos devem ser pré-instalados no dispositivo e podem ser atualizados somente quando o software do sistema do dispositivo for atualizado.
+
+Guia do Desenvolvedor
+
+A
+
+Fundamentos de uma Aplicação
+
+Os aplicativos Android podem ser desenvolvidos usando as linguagens Kotlin, Java e C++. As ferramentas do Android SDK compilam seu código junto com quaisquer dados e arquivos de recursos em um APK ou Android App Bundle.
+
+Um package Android, que é um arquivo compactado com um sufixo .apk, contém o conteúdo de um aplicativo Android necessário em tempo de execução e é o arquivo que os dispositivos com tecnologia Android usam para instalar um aplicativo.
+
+Um Android App Bundle, que pode ser identificado por um arquivo com o sufixo .aab, contém o conteúdo de um projeto de aplicativo Android, incluindo alguns metadados adicionais que não são necessários em tempo de execução. Um AAB é um formato de publicação e não pode ser instalado em dispositivos Android. Ele adia a geração e a assinatura do APK para um estágio posterior. Ao distribuir seu aplicativo por meio do Google Play, por exemplo, os servidores do Google Play geram APKs otimizados que contêm apenas os recursos e o código exigidos por um determinado dispositivo que está solicitando a instalação do aplicativo.
+
+Cada aplicativo Android vive em sua própria sandBox, protegida pelos seguintes recursos de segurança:
+
+O sistema operacional Android é um sistema Linux multiusuário no qual cada aplicativo é um usuário diferente.
+
+Por padrão, o sistema atribui a cada aplicativo um ID de usuário Linux exclusivo (o ID é usado apenas pelo sistema e é desconhecido para o aplicativo). O sistema define permissões para todos os arquivos em um aplicativo para que apenas o ID do usuário atribuído a esse aplicativo possa acessá-los.
+
+Cada processo tem sua própria máquina virtual (VM), portanto, o código de um aplicativo é executado isoladamente de outros aplicativos.
+
+Por padrão, cada aplicativo é executado em seu próprio processo Linux. O sistema Android inicia o processo quando qualquer um dos componentes do aplicativo precisa ser executado e, em seguida, encerra o processo quando não é mais necessário ou quando o sistema deve recuperar memória para outros aplicativos.
+
+Também cabe ressaltar que o sistema Android implementa o princípio de privilégio mínimo. Ou seja, cada aplicativo, por padrão, tem acesso apenas aos componentes necessários para fazer seu trabalho e nada mais. Isso cria um ambiente seguro no qual um aplicativo não pode acessar partes do sistema para as quais não tem permissão. No entanto, existem maneiras de um aplicativo compartilhar dados com outros aplicativos e de um aplicativo acessar os serviços do sistema:
+
+É possível fazer com que dois aplicativos compartilhem o mesmo ID de usuário do Linux e, nesse caso, eles podem acessar os arquivos um do outro. Para conservar os recursos do sistema, os aplicativos com o mesmo ID de usuário também podem ser executados no mesmo processo do Linux e compartilhar a mesma VM. Os aplicativos também devem ser assinados com o mesmo certificado.
+
+Um aplicativo pode solicitar permissão para acessar dados do dispositivo, como localização, câmera e conexão Bluetooth. O usuário deve conceder explicitamente essas permissões.
+
+Tais métodos serão mais bem abordados no decorrer da documentação.
+
+App Components
+
+Os App Components são os blocos de construção essenciais de um aplicativo Android. Cada componente é um ponto de entrada pelo qual o sistema ou um usuário pode entrar em seu aplicativo. Há quatro tipos distintos de app components:
+
+a) Activities: Uma activity é um fragmento da aplicação com qual o usuário pode interagir, a qual possui certa independência dentro da estrutura da aplicação. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura destes e outra que permite respondê-los. Ou seja, as atividades trabalham para criar uma experiência coesa das funções de uma aplicação. A maioria dos aplicativos contém várias telas, ou seja, várias atividades. Normalmente, uma atividade em um aplicativo é especificada como a MainActivity, sendo a tela inicial do aplicativo. Cada atividade pode então iniciar outra atividade para realizar ações distintas. Porém, diferentemente da sua contraparte desktop, mobile-apps nem sempre são inicializados de um mesmo ponto. Pelo contrário, a jornada do usuário normalmente se inicia de forma não determinada.
+
+Retornando ao exemplo do Gmail App, pode se notar diferentes formas de inicializá-lo, sendo a mais direta delas através da sua MainActivity. Por outro lado, quando seu acesso está atrelado a outro app, a MainActivity não será necessariamente utilizada, sendo possível acessar especificamente a task de escrita e envio de e-mails.
+
+Toda activity é subclasse da classe Activity, a qual será abordada em detalhes mais adiante.
+
+b) Services: Um service é um entry point capaz de executar um recurso de uma aplicação em segundo plano enquanto o usuário não interage com ela, ou de disponibilizar estes recursos a outras aplicações.
+
+Serviços podem ser tanto iniciados (restritos aos próprios processos) quanto vinculados (se estendem a processos de outros apps), de modo que se tornam úteis para todos os tipos de conceitos de sistemas high-level.
+
+Todo service é subclasse da classe Service, a qual será abordada em detalhes mais adiante
+
+c) Broadcast receivers: Um broadcast receiver é um componente de comunicação tanto entre usuário e sistema, quanto entre aplicações. Sua função é basicamente disparar e transmitir eventos a quem interessar, independentemente se o app destino esteja ou não em uso.
+
+Um app android utiliza um BroadcastReceiver tanto quando gera notificações para o usuário na barra de status, quanto quando sinaliza a outros apps que informações nele geradas estão disponíveis para uso (downloads, imagens, etc), o que ocorre sem que o usuário tome conhecimento.
+
+Todo broadcast receiver é subclasse da classe BroadcastReceiver, a qual será abordada em detalhes mais adiante
+
+d) Content providers: Um content provider gerencia um conjunto compartilhado de dados do app que você pode armazenar no sistema de arquivos, em um banco de dados SQLite, na Web ou em qualquer outro local de armazenamento permanente que seu app possa acessar. Por meio do provedor de conteúdo, outros apps podem consultar ou modificar os dados, se este assim permitir.
+
+Por exemplo, o sistema Android oferece um provedor de conteúdo que gerencia os dados de contato do usuário. Qualquer app com as permissões adequadas pode consultar o provedor de conteúdo, por exemplo, usando ContactsContract.Data, para ler e gravar informações sobre uma pessoa específica.
+
+Todo content provider é subclasse da classe ContentProvider, a qual será abordada em detalhes mais adiante.
+O Arquivo Manifesto
+
+Antes que o sistema Android possa iniciar um app component, é necessário torná-lo ciente de sua existência, o que se dá a partir da leitura prévia do arquivo manifesto, ou AndroidManifest.xml, presente na raiz do projeto. Desse modo, todos os componentes da aplicação serão declarados nele.
+
+Além disso, o mesmo arquivo é incumbido de:
+
+- Identificar todas as permissões do usuário exigidas pelo app, como acesso à internet ou acesso a lista de contatos, arquivos, imagens, etc;
+- Declarar o API level mínimo exigido pelo aplicação, baseando-se em quais APIs o app utiliza;
+- Declarar as features de hardware e software requeridos pelo app, como câmera, serviços de Bluetooth ou tela multitoque;
+- Declarar as bibliotecas de API as quais o app precisa ser vinculado (além das APIs do framework do Android), como a Biblioteca Google Maps.
+
+O trecho a seguir demonstra a estrutura do arquivo:
+
+a) <manifest>: O elemento raiz do arquivo AndroidManifest.xml. Ele precisa conter um elemento <application> e especificar os atributos xmlns:android e package.
+
+O elemento manifest possui os seguintes atributos:
+
+xmlns:android: Define o namespace do Android. Esse atributo é sempre definido como
+
+package: A
+
+Referência de elementos
+
+O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml.
+
+a) <activity>: Declara uma activity que implementa parte da UI do aplicativo. Todas as activities precisam ser representadas por elementos <activity> no arquivo de manifesto. Aquelas que não forem declaradas não serão vistas pelo sistema e não serão executadas.
+
+A seguir fica exemplificado como uma activity deve ser declarada:
+
+a) <service>: A
+
+a) <receiver>: A
+
+a) <provider>: A
+
+Gradle
+
+A
+
+Arquitetura
+
+A
