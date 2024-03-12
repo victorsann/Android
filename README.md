@@ -135,15 +135,17 @@ Dentro do ciclo de vida de uma tela, é importante ficar atento as inicializaç�
 
 <p align="justify">A</p> -->
 
-O Sistema Operacional
+# O Sistema Operacional
 
 Compreender o Android como sistema operacional perpassa o entendimento de como este é mantido e quem está por trás de seu desenvolvimento e gerenciamento. A princípio, o Android é um produto desenvolvido pelo grupo de empresas conhecido como Open Handset Alliance (OHA), liderado pela Google. O produto engloba uma série de subprojetos de software, gerido pelo Android Open Source Project (AOSP), por meio do Programa de compatibilidade do Android. Tal programa permite que qualquer pessoa que contribua para o desenvolvimento do produto faça parte de um ecossistema compartilhado.
 
 Desse modo o Android é intencional e explicitamente uma iniciativa de código aberto, que pode atender qualquer pessoa para qualquer finalidade, desde que legítima.
 
-Visão Geral da Arquitetura
+## Visão Geral da Arquitetura
 
 O Android é um sistema operacional baseado no núcleo Linux, ou seja, na base de sua arquitetura está um Kernel Linux. Tal arquitetura decorre da implementação de uma plataforma dedicada, também open source, chamada Android Open System Platform (AOSP), cuja stack de software contém as seguintes camadas:
+
+[img](https://source.android.com/static/images/android_stack.png?hl=pt-br)
 
 Sobre cada camada, cabe destacar:
 
@@ -171,11 +173,11 @@ Aplicativo Privilegiado: Um aplicativo criado usando uma combinação das APIs d
 
 Aplicativo do Fabricante do Dispositivo: Um aplicativo criado usando uma combinação de API do Android, API do sistema e acesso direto à implementação da estrutura do Android. Como um fabricante de dispositivos pode acessar diretamente APIs instáveis ​​na estrutura do Android, esses aplicativos devem ser pré-instalados no dispositivo e podem ser atualizados somente quando o software do sistema do dispositivo for atualizado.
 
-Guia do Desenvolvedor
+# Guia do Desenvolvedor
 
 A
 
-Fundamentos de uma Aplicação
+## Fundamentos de uma Aplicação
 
 Os aplicativos Android podem ser desenvolvidos usando as linguagens Kotlin, Java e C++. As ferramentas do Android SDK compilam seu código junto com quaisquer dados e arquivos de recursos em um APK ou Android App Bundle.
 
