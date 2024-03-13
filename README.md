@@ -366,7 +366,7 @@ package: A
 
 O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml.
 
-<table>
+<table align="justify">
   <tr>
     <th>Company</th>
     <th>Contact</th>
