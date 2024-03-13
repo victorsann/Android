@@ -384,6 +384,15 @@ O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifes
   </tr>
 </table>
 
+<table style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+    <tr style="height: 25%; font-size: 180px;">
+        <td>Region</td>
+    </tr>
+    <tr style="height: 75%; font-size: 540px;">
+        <td>100.00%</td>
+    </tr>
+</table>
+
 ## Gradle
 
 A
