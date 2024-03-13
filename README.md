@@ -232,7 +232,7 @@ A
 
 ## 3.1. Fundamentos de uma Aplicação
 
-<p align="justify">Os aplicativos Android podem ser desenvolvidos usando as linguagens [Kotlin](), Java e C++. As ferramentas do Android SDK compilam seu código junto com quaisquer dados e arquivos de recursos em um APK ou Android App Bundle.
+<p align="justify">Os aplicativos Android podem ser desenvolvidos usando as linguagens <link rel="Kotlin" href="Kotlin">, Java e C++. As ferramentas do Android SDK compilam seu código junto com quaisquer dados e arquivos de recursos em um APK ou Android App Bundle.
 
 </p>
 
