@@ -187,13 +187,13 @@ Um Android App Bundle, que pode ser identificado por um arquivo com o sufixo .aa
 
 Cada aplicativo Android vive em sua própria sandBox, protegida pelos seguintes recursos de segurança:
 
-O sistema operacional Android é um sistema Linux multiusuário no qual cada aplicativo é um usuário diferente.
+- O sistema operacional Android é um sistema Linux multiusuário no qual cada aplicativo é um usuário diferente.
 
-Por padrão, o sistema atribui a cada aplicativo um ID de usuário Linux exclusivo (o ID é usado apenas pelo sistema e é desconhecido para o aplicativo). O sistema define permissões para todos os arquivos em um aplicativo para que apenas o ID do usuário atribuído a esse aplicativo possa acessá-los.
+- Por padrão, o sistema atribui a cada aplicativo um ID de usuário Linux exclusivo (o ID é usado apenas pelo sistema e é desconhecido para o aplicativo). O sistema define permissões para todos os arquivos em um aplicativo para que apenas o ID do usuário atribuído a esse aplicativo possa acessá-los.
 
-Cada processo tem sua própria máquina virtual (VM), portanto, o código de um aplicativo é executado isoladamente de outros aplicativos.
+- Cada processo tem sua própria máquina virtual (VM), portanto, o código de um aplicativo é executado isoladamente de outros aplicativos.
 
-Por padrão, cada aplicativo é executado em seu próprio processo Linux. O sistema Android inicia o processo quando qualquer um dos componentes do aplicativo precisa ser executado e, em seguida, encerra o processo quando não é mais necessário ou quando o sistema deve recuperar memória para outros aplicativos.
+- Por padrão, cada aplicativo é executado em seu próprio processo Linux. O sistema Android inicia o processo quando qualquer um dos componentes do aplicativo precisa ser executado e, em seguida, encerra o processo quando não é mais necessário ou quando o sistema deve recuperar memória para outros aplicativos.
 
 Também cabe ressaltar que o sistema Android implementa o princípio de privilégio mínimo. Ou seja, cada aplicativo, por padrão, tem acesso apenas aos componentes necessários para fazer seu trabalho e nada mais. Isso cria um ambiente seguro no qual um aplicativo não pode acessar partes do sistema para as quais não tem permissão. No entanto, existem maneiras de um aplicativo compartilhar dados com outros aplicativos e de um aplicativo acessar os serviços do sistema:
 
@@ -203,38 +203,50 @@ Um aplicativo pode solicitar permissão para acessar dados do dispositivo, como 
 
 Tais métodos serão mais bem abordados no decorrer da documentação.
 
-App Components
+## App Components
 
 Os App Components são os blocos de construção essenciais de um aplicativo Android. Cada componente é um ponto de entrada pelo qual o sistema ou um usuário pode entrar em seu aplicativo. Há quatro tipos distintos de app components:
 
-a) Activities: Uma activity é um fragmento da aplicação com qual o usuário pode interagir, a qual possui certa independência dentro da estrutura da aplicação. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura destes e outra que permite respondê-los. Ou seja, as atividades trabalham para criar uma experiência coesa das funções de uma aplicação. A maioria dos aplicativos contém várias telas, ou seja, várias atividades. Normalmente, uma atividade em um aplicativo é especificada como a MainActivity, sendo a tela inicial do aplicativo. Cada atividade pode então iniciar outra atividade para realizar ações distintas. Porém, diferentemente da sua contraparte desktop, mobile-apps nem sempre são inicializados de um mesmo ponto. Pelo contrário, a jornada do usuário normalmente se inicia de forma não determinada.
+### a) Activities:
+
+Uma activity é um fragmento da aplicação com qual o usuário pode interagir, a qual possui certa independência dentro da estrutura da aplicação. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura destes e outra que permite respondê-los. Ou seja, as atividades trabalham para criar uma experiência coesa das funções de uma aplicação. A maioria dos aplicativos contém várias telas, ou seja, várias atividades. Normalmente, uma atividade em um aplicativo é especificada como a MainActivity, sendo a tela inicial do aplicativo. Cada atividade pode então iniciar outra atividade para realizar ações distintas. Porém, diferentemente da sua contraparte desktop, mobile-apps nem sempre são inicializados de um mesmo ponto. Pelo contrário, a jornada do usuário normalmente se inicia de forma não determinada.
 
 Retornando ao exemplo do Gmail App, pode se notar diferentes formas de inicializá-lo, sendo a mais direta delas através da sua MainActivity. Por outro lado, quando seu acesso está atrelado a outro app, a MainActivity não será necessariamente utilizada, sendo possível acessar especificamente a task de escrita e envio de e-mails.
 
 Toda activity é subclasse da classe Activity, a qual será abordada em detalhes mais adiante.
 
-b) Services: Um service é um entry point capaz de executar um recurso de uma aplicação em segundo plano enquanto o usuário não interage com ela, ou de disponibilizar estes recursos a outras aplicações.
+### b) Services:
+
+Um service é um entry point capaz de executar um recurso de uma aplicação em segundo plano enquanto o usuário não interage com ela, ou de disponibilizar estes recursos a outras aplicações.
 
 Serviços podem ser tanto iniciados (restritos aos próprios processos) quanto vinculados (se estendem a processos de outros apps), de modo que se tornam úteis para todos os tipos de conceitos de sistemas high-level.
 
 Todo service é subclasse da classe Service, a qual será abordada em detalhes mais adiante
 
-c) Broadcast receivers: Um broadcast receiver é um componente de comunicação tanto entre usuário e sistema, quanto entre aplicações. Sua função é basicamente disparar e transmitir eventos a quem interessar, independentemente se o app destino esteja ou não em uso.
+### c) Broadcast receivers:
+
+Um broadcast receiver é um componente de comunicação tanto entre usuário e sistema, quanto entre aplicações. Sua função é basicamente disparar e transmitir eventos a quem interessar, independentemente se o app destino esteja ou não em uso.
 
 Um app android utiliza um BroadcastReceiver tanto quando gera notificações para o usuário na barra de status, quanto quando sinaliza a outros apps que informações nele geradas estão disponíveis para uso (downloads, imagens, etc), o que ocorre sem que o usuário tome conhecimento.
 
 Todo broadcast receiver é subclasse da classe BroadcastReceiver, a qual será abordada em detalhes mais adiante
 
-d) Content providers: Um content provider gerencia um conjunto compartilhado de dados do app que você pode armazenar no sistema de arquivos, em um banco de dados SQLite, na Web ou em qualquer outro local de armazenamento permanente que seu app possa acessar. Por meio do provedor de conteúdo, outros apps podem consultar ou modificar os dados, se este assim permitir.
+### d) Content providers:
+
+Um content provider gerencia um conjunto compartilhado de dados do app que você pode armazenar no sistema de arquivos, em um banco de dados SQLite, na Web ou em qualquer outro local de armazenamento permanente que seu app possa acessar. Por meio do provedor de conteúdo, outros apps podem consultar ou modificar os dados, se este assim permitir.
 
 Por exemplo, o sistema Android oferece um provedor de conteúdo que gerencia os dados de contato do usuário. Qualquer app com as permissões adequadas pode consultar o provedor de conteúdo, por exemplo, usando ContactsContract.Data, para ler e gravar informações sobre uma pessoa específica.
 
 Todo content provider é subclasse da classe ContentProvider, a qual será abordada em detalhes mais adiante.
-O Arquivo Manifesto
+
+## O Arquivo Manifesto
 
 Antes que o sistema Android possa iniciar um app component, é necessário torná-lo ciente de sua existência, o que se dá a partir da leitura prévia do arquivo manifesto, ou AndroidManifest.xml, presente na raiz do projeto. Desse modo, todos os componentes da aplicação serão declarados nele.
 
 Além disso, o mesmo arquivo é incumbido de:
+
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
 
 - Identificar todas as permissões do usuário exigidas pelo app, como acesso à internet ou acesso a lista de contatos, arquivos, imagens, etc;
 - Declarar o API level mínimo exigido pelo aplicação, baseando-se em quais APIs o app utiliza;
@@ -243,7 +255,9 @@ Além disso, o mesmo arquivo é incumbido de:
 
 O trecho a seguir demonstra a estrutura do arquivo:
 
-a) <manifest>: O elemento raiz do arquivo AndroidManifest.xml. Ele precisa conter um elemento <application> e especificar os atributos xmlns:android e package.
+### a) <manifest>:
+
+O elemento raiz do arquivo AndroidManifest.xml. Ele precisa conter um elemento <application> e especificar os atributos xmlns:android e package.
 
 O elemento manifest possui os seguintes atributos:
 
@@ -251,24 +265,26 @@ xmlns:android: Define o namespace do Android. Esse atributo é sempre definido c
 
 package: A
 
-Referência de elementos
+## Referência de elementos
 
 O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml.
 
-a) <activity>: Declara uma activity que implementa parte da UI do aplicativo. Todas as activities precisam ser representadas por elementos <activity> no arquivo de manifesto. Aquelas que não forem declaradas não serão vistas pelo sistema e não serão executadas.
+### a) <activity>:
+
+Declara uma activity que implementa parte da UI do aplicativo. Todas as activities precisam ser representadas por elementos <activity> no arquivo de manifesto. Aquelas que não forem declaradas não serão vistas pelo sistema e não serão executadas.
 
 A seguir fica exemplificado como uma activity deve ser declarada:
 
-a) <service>: A
+### a) <service>: A
 
-a) <receiver>: A
+### a) <receiver>: A
 
-a) <provider>: A
+### a) <provider>: A
 
-Gradle
+## Gradle
 
 A
 
-Arquitetura
+## Arquitetura
 
 A
