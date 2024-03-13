@@ -135,7 +135,7 @@ Dentro do ciclo de vida de uma tela, é importante ficar atento as inicializaç�
 
 <p align="justify">A</p> -->
 
-# O Sistema Operacional
+# 1. O Sistema Operacional
 
 <p align="justify">
 Compreender o Android como sistema operacional perpassa o entendimento de como este é mantido e quem está por trás de seu desenvolvimento e gerenciamento. A princípio, o Android é um produto desenvolvido pelo grupo de empresas conhecido como Open Handset Alliance (OHA), liderado pela Google. O produto engloba uma série de subprojetos de software, gerido pelo Android Open Source Project (AOSP), por meio do Programa de compatibilidade do Android. Tal programa permite que qualquer pessoa que contribua para o desenvolvimento do produto faça parte de um ecossistema compartilhado.
@@ -144,15 +144,17 @@ Desse modo o Android é intencional e explicitamente uma iniciativa de código a
 
 </p>
 
-## Visão Geral da Arquitetura
+## 2. Visão Geral da Arquitetura
 
+<p align="justify">
 O Android é um sistema operacional baseado no núcleo Linux, ou seja, na base de sua arquitetura está um Kernel Linux. Tal arquitetura decorre da implementação de uma plataforma dedicada, também open source, chamada Android Open System Platform (AOSP), cuja stack de software contém as seguintes camadas:
+</p>
 
 ![img](https://source.android.com/static/images/android_stack.png?hl=pt-br)
 
 Sobre cada camada, cabe destacar:
 
-1. Linux Kernel: O kernel é a parte central de qualquer sistema operacional e se comunica com o hardware subjacente em um dispositivo, sendo nesse caso um Kernel Linux, comum a sistemas operacionais baseados em Unix.
+<p>1.<h3>Linux Kernel:</h3> O kernel é a parte central de qualquer sistema operacional e se comunica com o hardware subjacente em um dispositivo, sendo nesse caso um Kernel Linux, comum a sistemas operacionais baseados em Unix.</p>
 
 2. Daemons e Bibliotecas Nativas: No Android, um daemon é um processo contínuo em segundo plano que executa várias tarefas no nível do sistema, dentre elas a execução de builds e a inicialização de bibliotecas. As bibliotecas nativas, por sua vez, têm por função interagir diretamente com o kernel ou outras interfaces e não dependem de uma implementação HAL baseada no espaço do usuário.
 
