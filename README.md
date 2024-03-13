@@ -339,7 +339,7 @@ Além disso, o mesmo arquivo é incumbido de:
 
 O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml.
 
-| <action>                 | Adiciona uma ação a um filtro de intents.                                                                                                                        |
+| [<action>]()             | Adiciona uma ação a um filtro de intents.                                                                                                                        |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <activity>               | Declara um componente da atividade.                                                                                                                              |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
