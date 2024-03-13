@@ -156,40 +156,55 @@ Sobre cada camada, cabe destacar:
 
 ### 1. Linux Kernel
 
-<p>
+<p align="justify">
 O kernel é a parte central de qualquer sistema operacional e se comunica com o hardware subjacente em um dispositivo, sendo nesse caso um Kernel Linux, comum a sistemas operacionais baseados em Unix.
 </p>
 
 ### 2. Daemons e Bibliotecas Nativas
 
+<p align="justify">
 No Android, um daemon é um processo contínuo em segundo plano que executa várias tarefas no nível do sistema, dentre elas a execução de builds e a inicialização de bibliotecas. As bibliotecas nativas, por sua vez, têm por função interagir diretamente com o kernel ou outras interfaces e não dependem de uma implementação HAL baseada no espaço do usuário.
+</p>
 
 ### 3. HAL
 
+<p align="justify">
 Um HAL é uma camada de abstração com uma interface padrão para os fornecedores de hardware implementarem. Sua principal função é expor as capacidades do hardware do dispositivo para APIs de alto nível, permitindo implementar funcionalidades sem afetá-las ou modificá-las.
+</p>
 
 ### 4. Android Runtime:
 
+<p align="justify">
 O android runtime é um ambiente de tempo de execução Java fornecido pelo AOSP, que realiza a tradução do bytecode do aplicativo em instruções específicas do processador que são executadas pelo ambiente de tempo de execução do dispositivo.
+</p>
 
 ### 5. Serviços do Sistema
 
+<p align="justify">
 Os serviços do sistema são componentes modulares e focados, como system_server, SurfaceFlinger e MediaService. A funcionalidade exposta pela API da estrutura do Android se comunica com os serviços do sistema para acessar o hardware subjacente.
+</p>
 
 ### 6. Android Framework
 
+<p align="justify">
 O android framework é um grupo de classes Java, interfaces e outros códigos pré-compilados sobre os quais os aplicativos são construídos. Partes da estrutura são acessíveis publicamente por meio do uso da API do Android. Outras partes da estrutura estão disponíveis apenas para OEMs por meio do uso das APIs do sistema. O código da estrutura do Android é executado dentro do processo de um aplicativo.
+</p>
 
 ### 7. API do Android
 
+<p align="justify">
 A API do Android é a API disponível publicamente para desenvolvedores de aplicativos Android terceirizados.
+</p>
 
 ### 8. API do Sistema
 
+<p align="justify">
 A API do sistema representa as APIs do Android disponíveis apenas para parceiros e OEMs (Original Equipment Manufacturer) para inclusão em aplicativos agrupados. Essas APIs são marcadas como @SystemApi no código-fonte.
+</p>
 
 ### 9. Aplicativo
 
+<p align="justify">
 Acima das demais camadas se encontram os aplicativos, dentre os quais destacam-se:
 
 Aplicativo Android: Um aplicativo criado exclusivamente usando a API do Android. A Google Play Store é amplamente usada para encontrar e baixar aplicativos Android, embora existam muitas outras alternativas. Em alguns casos, um fabricante de dispositivos pode querer pré-instalar um aplicativo Android para dar suporte à funcionalidade principal do dispositivo.
@@ -197,6 +212,8 @@ Aplicativo Android: Um aplicativo criado exclusivamente usando a API do Android.
 Aplicativo Privilegiado: Um aplicativo criado usando uma combinação das APIs do Android e do sistema. Esses aplicativos devem ser pré-instalados como aplicativos privilegiados em um dispositivo.
 
 Aplicativo do Fabricante do Dispositivo: Um aplicativo criado usando uma combinação de API do Android, API do sistema e acesso direto à implementação da estrutura do Android. Como um fabricante de dispositivos pode acessar diretamente APIs instáveis ​​na estrutura do Android, esses aplicativos devem ser pré-instalados no dispositivo e podem ser atualizados somente quando o software do sistema do dispositivo for atualizado.
+
+</p>
 
 # Guia do Desenvolvedor
 
