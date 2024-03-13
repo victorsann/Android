@@ -268,13 +268,13 @@ Um aplicativo pode solicitar permissão para acessar dados do dispositivo, como 
 
 Tais métodos serão mais bem abordados no decorrer da documentação.
 
-## 3.2 App Components
+## 3.2. App Components
 
 <p align="justify">
 Os App Components são os blocos de construção essenciais de um aplicativo Android. Cada componente é um ponto de entrada pelo qual o sistema ou um usuário pode entrar em seu aplicativo. Há quatro tipos distintos de app components:
 </p>
 
-### Activities
+### 3.2.1. Activities
 
 <p align="justify">
 Uma activity é um fragmento da aplicação com qual o usuário pode interagir, a qual possui certa independência dentro da estrutura da aplicação. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura destes e outra que permite respondê-los. Ou seja, as atividades trabalham para criar uma experiência coesa das funções de uma aplicação. A maioria dos aplicativos contém várias telas, ou seja, várias atividades. Normalmente, uma atividade em um aplicativo é especificada como a MainActivity, sendo a tela inicial do aplicativo. Cada atividade pode então iniciar outra atividade para realizar ações distintas. Porém, diferentemente da sua contraparte desktop, mobile-apps nem sempre são inicializados de um mesmo ponto. Pelo contrário, a jornada do usuário normalmente se inicia de forma não determinada.
@@ -285,7 +285,7 @@ Retornando ao exemplo do Gmail App, pode se notar diferentes formas de inicializ
 
 Toda activity é subclasse da classe Activity, a qual será abordada em detalhes mais adiante.
 
-### Services
+### 3.2.2. Services
 
 <p align="justify">
 Um service é um entry point capaz de executar um recurso de uma aplicação em segundo plano enquanto o usuário não interage com ela, ou de disponibilizar estes recursos a outras aplicações.
@@ -297,7 +297,7 @@ Serviços podem ser tanto iniciados (restritos aos próprios processos) quanto v
 
 Todo service é subclasse da classe Service, a qual será abordada em detalhes mais adiante
 
-### Broadcast receivers
+### 3.2.3. Broadcast receivers
 
 <p align="justify">
 Um broadcast receiver é um componente de comunicação tanto entre usuário e sistema, quanto entre aplicações. Sua função é basicamente disparar e transmitir eventos a quem interessar, independentemente se o app destino esteja ou não em uso.
@@ -309,7 +309,7 @@ Um app android utiliza um BroadcastReceiver tanto quando gera notificações par
 
 Todo broadcast receiver é subclasse da classe BroadcastReceiver, a qual será abordada em detalhes mais adiante
 
-### Content providers
+### 3.2.4. Content providers
 
 <p align="justify">
 Um content provider gerencia um conjunto compartilhado de dados do app que você pode armazenar no sistema de arquivos, em um banco de dados SQLite, na Web ou em qualquer outro local de armazenamento permanente que seu app possa acessar. Por meio do provedor de conteúdo, outros apps podem consultar ou modificar os dados, se este assim permitir.
@@ -329,7 +329,7 @@ Antes que o sistema Android possa iniciar um app component, é necessário torn�
 
 Além disso, o mesmo arquivo é incumbido de:
 
-> [!]
+> [!NOTE]
 > Useful information that users should know, even when skimming content.
 
 - Identificar todas as permissões do usuário exigidas pelo app, como acesso à internet ou acesso a lista de contatos, arquivos, imagens, etc;
