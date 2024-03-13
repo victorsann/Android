@@ -232,8 +232,8 @@ A
 
 ## 3.1. Fundamentos de uma Aplicação
 
-<p align="justify">Os aplicativos Android podem ser desenvolvidos usando as linguagens <link rel="Kotlin" href="Kotlin">, Java e C++. As ferramentas do Android SDK compilam seu código junto com quaisquer dados e arquivos de recursos em um APK ou Android App Bundle.
-
+<p align="justify">
+Os aplicativos Android podem ser desenvolvidos usando as linguagens Kotlin, Java e C++. As ferramentas do Android SDK compilam seu código junto com quaisquer dados e arquivos de recursos em um APK ou Android App Bundle.
 </p>
 
 <p align="justify">
@@ -254,53 +254,78 @@ Cada aplicativo Android vive em sua própria sandBox, protegida pelos seguintes 
 
 - Por padrão, cada aplicativo é executado em seu próprio processo Linux. O sistema Android inicia o processo quando qualquer um dos componentes do aplicativo precisa ser executado e, em seguida, encerra o processo quando não é mais necessário ou quando o sistema deve recuperar memória para outros aplicativos.
 
+<p align="justify">
 Também cabe ressaltar que o sistema Android implementa o princípio de privilégio mínimo. Ou seja, cada aplicativo, por padrão, tem acesso apenas aos componentes necessários para fazer seu trabalho e nada mais. Isso cria um ambiente seguro no qual um aplicativo não pode acessar partes do sistema para as quais não tem permissão. No entanto, existem maneiras de um aplicativo compartilhar dados com outros aplicativos e de um aplicativo acessar os serviços do sistema:
+</p>
 
+<p align="justify">
 É possível fazer com que dois aplicativos compartilhem o mesmo ID de usuário do Linux e, nesse caso, eles podem acessar os arquivos um do outro. Para conservar os recursos do sistema, os aplicativos com o mesmo ID de usuário também podem ser executados no mesmo processo do Linux e compartilhar a mesma VM. Os aplicativos também devem ser assinados com o mesmo certificado.
+</p>
 
+<p align="justify">
 Um aplicativo pode solicitar permissão para acessar dados do dispositivo, como localização, câmera e conexão Bluetooth. O usuário deve conceder explicitamente essas permissões.
+</p>
 
 Tais métodos serão mais bem abordados no decorrer da documentação.
 
 ## 3.2 App Components
 
+<p align="justify">
 Os App Components são os blocos de construção essenciais de um aplicativo Android. Cada componente é um ponto de entrada pelo qual o sistema ou um usuário pode entrar em seu aplicativo. Há quatro tipos distintos de app components:
+</p>
 
-### a) Activities:
+### Activities
 
+<p align="justify">
 Uma activity é um fragmento da aplicação com qual o usuário pode interagir, a qual possui certa independência dentro da estrutura da aplicação. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura destes e outra que permite respondê-los. Ou seja, as atividades trabalham para criar uma experiência coesa das funções de uma aplicação. A maioria dos aplicativos contém várias telas, ou seja, várias atividades. Normalmente, uma atividade em um aplicativo é especificada como a MainActivity, sendo a tela inicial do aplicativo. Cada atividade pode então iniciar outra atividade para realizar ações distintas. Porém, diferentemente da sua contraparte desktop, mobile-apps nem sempre são inicializados de um mesmo ponto. Pelo contrário, a jornada do usuário normalmente se inicia de forma não determinada.
 
 Retornando ao exemplo do Gmail App, pode se notar diferentes formas de inicializá-lo, sendo a mais direta delas através da sua MainActivity. Por outro lado, quando seu acesso está atrelado a outro app, a MainActivity não será necessariamente utilizada, sendo possível acessar especificamente a task de escrita e envio de e-mails.
 
+</p>
+
 Toda activity é subclasse da classe Activity, a qual será abordada em detalhes mais adiante.
 
-### b) Services:
+### Services
 
+<p align="justify">
 Um service é um entry point capaz de executar um recurso de uma aplicação em segundo plano enquanto o usuário não interage com ela, ou de disponibilizar estes recursos a outras aplicações.
+</p>
 
+<p align="justify">
 Serviços podem ser tanto iniciados (restritos aos próprios processos) quanto vinculados (se estendem a processos de outros apps), de modo que se tornam úteis para todos os tipos de conceitos de sistemas high-level.
+</p>
 
 Todo service é subclasse da classe Service, a qual será abordada em detalhes mais adiante
 
-### c) Broadcast receivers:
+### Broadcast receivers
 
+<p align="justify">
 Um broadcast receiver é um componente de comunicação tanto entre usuário e sistema, quanto entre aplicações. Sua função é basicamente disparar e transmitir eventos a quem interessar, independentemente se o app destino esteja ou não em uso.
+</p>
 
+<p align="justify">
 Um app android utiliza um BroadcastReceiver tanto quando gera notificações para o usuário na barra de status, quanto quando sinaliza a outros apps que informações nele geradas estão disponíveis para uso (downloads, imagens, etc), o que ocorre sem que o usuário tome conhecimento.
+</p>
 
 Todo broadcast receiver é subclasse da classe BroadcastReceiver, a qual será abordada em detalhes mais adiante
 
-### d) Content providers:
+### Content providers
 
+<p align="justify">
 Um content provider gerencia um conjunto compartilhado de dados do app que você pode armazenar no sistema de arquivos, em um banco de dados SQLite, na Web ou em qualquer outro local de armazenamento permanente que seu app possa acessar. Por meio do provedor de conteúdo, outros apps podem consultar ou modificar os dados, se este assim permitir.
+</p>
 
+<p align="justify">
 Por exemplo, o sistema Android oferece um provedor de conteúdo que gerencia os dados de contato do usuário. Qualquer app com as permissões adequadas pode consultar o provedor de conteúdo, por exemplo, usando ContactsContract.Data, para ler e gravar informações sobre uma pessoa específica.
+</p>
 
 Todo content provider é subclasse da classe ContentProvider, a qual será abordada em detalhes mais adiante.
 
 ## O Arquivo Manifesto
 
+<p align="justify">
 Antes que o sistema Android possa iniciar um app component, é necessário torná-lo ciente de sua existência, o que se dá a partir da leitura prévia do arquivo manifesto, ou AndroidManifest.xml, presente na raiz do projeto. Desse modo, todos os componentes da aplicação serão declarados nele.
+</p>
 
 Além disso, o mesmo arquivo é incumbido de:
 
@@ -314,9 +339,11 @@ Além disso, o mesmo arquivo é incumbido de:
 
 O trecho a seguir demonstra a estrutura do arquivo:
 
-### manifest:
+### Manifest
 
-O elemento raiz do arquivo AndroidManifest.xml. Ele precisa conter um elemento <application> e especificar os atributos xmlns:android e package.
+<p align="justify">
+O elemento raiz do arquivo AndroidManifest.xml. Ele precisa conter um elemento \<application>\ e especificar os atributos xmlns:android e package.
+</p>
 
 O elemento manifest possui os seguintes atributos:
 
