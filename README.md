@@ -366,8 +366,7 @@ package: A
 
 O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml.
 
-<div style="display: flex; ">
-<table class="table table-condensed">
+<table style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
   <tr>
     <th>Company</th>
     <th>Contact</th>
@@ -384,7 +383,6 @@ O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifes
     <td>Mexico</td>
   </tr>
 </table>
-</div>
 
 ## Gradle
 
