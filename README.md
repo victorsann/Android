@@ -329,7 +329,7 @@ Antes que o sistema Android possa iniciar um app component, é necessário torn�
 
 Além disso, o mesmo arquivo é incumbido de:
 
-> [!NOTE]
+> [!]
 > Useful information that users should know, even when skimming content.
 
 - Identificar todas as permissões do usuário exigidas pelo app, como acesso à internet ou acesso a lista de contatos, arquivos, imagens, etc;
