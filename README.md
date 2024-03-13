@@ -321,7 +321,7 @@ Por exemplo, o sistema Android oferece um provedor de conteúdo que gerencia os 
 
 Todo content provider é subclasse da classe ContentProvider, a qual será abordada em detalhes mais adiante.
 
-## O Arquivo Manifesto
+## 3.3 O Arquivo Manifesto
 
 <p align="justify">
 Antes que o sistema Android possa iniciar um app component, é necessário torná-lo ciente de sua existência, o que se dá a partir da leitura prévia do arquivo manifesto, ou AndroidManifest.xml, presente na raiz do projeto. Desse modo, todos os componentes da aplicação serão declarados nele.
@@ -337,35 +337,41 @@ Além disso, o mesmo arquivo é incumbido de:
 - Declarar as features de hardware e software requeridos pelo app, como câmera, serviços de Bluetooth ou tela multitoque;
 - Declarar as bibliotecas de API as quais o app precisa ser vinculado (além das APIs do framework do Android), como a Biblioteca Google Maps.
 
-O trecho a seguir demonstra a estrutura básica do arquivo:
-
-### Manifest
-
-<p align="justify">
-É o elemento raiz do arquivo AndroidManifest.xml, que contém o elemento <b>application</b>:
-</p>
-
-    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-              package="string"
-              android:sharedUserId="string"
-              android:sharedUserLabel="string resource"
-              android:sharedUserMaxSdkVersion="integer"
-              android:versionCode="integer"
-              android:versionName="string"
-              android:installLocation=["auto" | "internalOnly" | "preferExternal"] >
-        ...
-    </manifest>
-
-O elemento manifest possui os seguintes atributos:
-
-xmlns:android: Define o namespace do Android. Esse atributo é sempre definido como
-
-package: A
-
-## Referência de elementos
-
-$${\color{red}Red}$$
 O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml.
+
+| <action> | Adiciona uma ação a um filtro de intents. |
+| <activity> | Declara um componente da atividade. |
+| <activity-alias> | Declara um alias para a atividade. |
+| <application> | Declara o aplicativo. |
+| <category> | Adiciona um nome de categoria a um filtro de intents. |
+| <compatible-screens> | Especifica cada configuração de tela com que o aplicativo é compatível. |
+| <data> | Adiciona uma especificação de dados a um filtro de intents. |
+| <grant-uri-permission> | Especifica os subconjuntos de dados do app aos quais o provedor de conteúdo pai tem permissão de acesso. |
+| <instrumentation> | InstrumentationDeclara uma classe que permite monitorar a interação de um aplicativo com o sistema. |
+| <intent-filter> | Especifica os tipos de intents aos quais uma atividade, um serviço ou um broadcast receiver pode responder. |
+| <manifest> | O elemento raiz do arquivo AndroidManifest.xml. |
+| <meta-data> | Um par de nome-valor para um item de dados extra e arbitrários que pode ser fornecido ao componente pai. |
+| <path-permission> | Define o caminho e as permissões necessárias para um subconjunto específico de dados em um provedor de conteúdo. |
+| <permission> | Declara uma permissão de segurança que pode ser usada para limitar o acesso a componentes ou recursos específicos deste ou de outros aplicativos. |
+| <permission-group> | Declara um nome para um agrupamento lógico de permissões relacionadas. |
+| <permission-tree> | Declara o nome base de uma árvore de permissões. |
+| <provider> | Declara o componente de um provedor de conteúdo. |
+| <queries> Declara o conjunto de outros apps que seu app pretende acessar. Saiba mais no guia sobre filtragem de visibilidade de pacotes. |
+| <receiver> | Declara um componente do broadcast receiver. |
+| <service> | Declara um componente de serviço. |
+| <supports-gl-texture> | Declara um único formato de compactação de textura GL que pode ser usado com o app. |
+| <supports-screens> | Declara os tamanhos de tela com suporte do app e ativa o modo de compatibilidade da tela para telas maiores do que as com suporte. |
+| <uses-configuration> | Indica os recursos de entrada específicos exigidos pelo aplicativo. |
+| <uses-feature> | Declara um único recurso de hardware ou software usado pelo aplicativo. |
+| <uses-library> | Especifica uma biblioteca compartilhada que precisa ser vinculada ao aplicativo. |
+| <uses-native-library> | Especifica uma biblioteca compartilhada nativa oferecida pelo fornecedor que precisa ser vinculada ao app. |
+| <uses-permission> | Especifica uma permissão do sistema que precisa ser concedida pelo usuário para que o app funcione corretamente. |
+| <uses-permission-sdk-23> | Especifica que um app quer uma permissão específica, mas somente se o app estiver instalado em um dispositivo com Android 6.0 (nível 23 da API) ou mais recente. |
+| <uses-sdk> | Permite expressar a compatibilidade de um aplicativo com uma ou mais versões da plataforma Android usando um número inteiro de nível de API. |
+
+| Attempt | #1  | #2  | #3  | #4  | #5  | #6  | #7  | #8  | #9  | #10 | #11 |
+| ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269 |
 
 > <action> Adiciona uma ação a um filtro de intents.
 
