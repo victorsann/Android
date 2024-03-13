@@ -337,7 +337,7 @@ Além disso, o mesmo arquivo é incumbido de:
 - Declarar as features de hardware e software requeridos pelo app, como câmera, serviços de Bluetooth ou tela multitoque;
 - Declarar as bibliotecas de API as quais o app precisa ser vinculado (além das APIs do framework do Android), como a Biblioteca Google Maps.
 
-O trecho a seguir demonstra a estrutura do arquivo:
+O trecho a seguir demonstra a estrutura básica do arquivo:
 
 ### Manifest
 
@@ -366,17 +366,23 @@ package: A
 
 O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml.
 
-### activity:
-
-Declara uma activity que implementa parte da UI do aplicativo. Todas as activities precisam ser representadas por elementos <activity> no arquivo de manifesto. Aquelas que não forem declaradas não serão vistas pelo sistema e não serão executadas.
-
-A seguir fica exemplificado como uma activity deve ser declarada:
-
-### service: A
-
-### receiver: A
-
-### provider: A
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table>
 
 ## Gradle
 
