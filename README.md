@@ -366,7 +366,7 @@ package: A
 
 O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml.
 
-<div class="container first-container col-sm-12 pull-left">
+<div style="display: flex; ">
 <table class="table table-condensed">
   <tr>
     <th>Company</th>
