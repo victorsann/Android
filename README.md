@@ -366,32 +366,7 @@ package: A
 
 O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml.
 
-<table style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
-  <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-</table>
-
-<table style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
-    <tr style="height: 25%; font-size: 180px;">
-        <td>Region</td>
-    </tr>
-    <tr style="height: 75%; font-size: 540px;">
-        <td>100.00%</td>
-    </tr>
-</table>
+> <action> Adiciona uma ação a um filtro de intents.
 
 ## Gradle
 
