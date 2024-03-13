@@ -364,6 +364,7 @@ package: A
 
 ## Referência de elementos
 
+$${\color{red}Red}$$
 O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml.
 
 > <action> Adiciona uma ação a um filtro de intents.
