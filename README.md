@@ -366,7 +366,8 @@ package: A
 
 O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml.
 
-<table align="justify">
+<div class="container first-container col-sm-12 pull-left">
+<table class="table table-condensed">
   <tr>
     <th>Company</th>
     <th>Contact</th>
@@ -383,6 +384,7 @@ O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifes
     <td>Mexico</td>
   </tr>
 </table>
+</div>
 
 ## Gradle
 
