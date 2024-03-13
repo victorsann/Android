@@ -342,7 +342,7 @@ O trecho a seguir demonstra a estrutura do arquivo:
 ### Manifest
 
 <p align="justify">
-O elemento raiz do arquivo AndroidManifest.xml. Ele precisa conter um elemento \<application>\ e especificar os atributos xmlns:android e package.
+O elemento raiz do arquivo AndroidManifest.xml. Ele precisa conter um elemento **application** e especificar os atributos xmlns:android e package.
 </p>
 
 O elemento manifest possui os seguintes atributos:
