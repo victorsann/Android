@@ -342,8 +342,19 @@ O trecho a seguir demonstra a estrutura do arquivo:
 ### Manifest
 
 <p align="justify">
-O elemento raiz do arquivo AndroidManifest.xml. Ele precisa conter um elemento **application** e especificar os atributos xmlns:android e package.
+É o elemento raiz do arquivo AndroidManifest.xml, que contém o elemento <b>application</b>:
 </p>
+
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+              package="string"
+              android:sharedUserId="string"
+              android:sharedUserLabel="string resource"
+              android:sharedUserMaxSdkVersion="integer"
+              android:versionCode="integer"
+              android:versionName="string"
+              android:installLocation=["auto" | "internalOnly" | "preferExternal"] >
+        ...
+    </manifest>
 
 O elemento manifest possui os seguintes atributos:
 
