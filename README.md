@@ -339,63 +339,60 @@ Além disso, o mesmo arquivo é incumbido de:
 
 O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml.
 
-| [action]()                 | Adiciona uma ação a um filtro de intents.                                                                                                                        |
+| [action]() | Adiciona uma ação a um filtro de intents. |
+| [activity]() | Declara um componente da atividade. |
+| [activity-alias]() | Declara um alias para a atividade. |
+| [application]() | Declara o aplicativo. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [activity]()               | Declara um componente da atividade.                                                                                                                              |
+| [category]() | Adiciona um nome de categoria a um filtro de intents. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [activity-alias]()         | Declara um alias para a atividade.                                                                                                                               |
+| [compatible-screens]() | Especifica cada configuração de tela com que o aplicativo é compatível. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [application]()            | Declara o aplicativo.                                                                                                                                            |
+| [data>]() | Adiciona uma especificação de dados a um filtro de intents. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [category]()               | Adiciona um nome de categoria a um filtro de intents.                                                                                                            |
+| [grant-uri-permission]() | Especifica os subconjuntos de dados do app aos quais o provedor de conteúdo pai tem permissão de acesso. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [compatible-screens]()     | Especifica cada configuração de tela com que o aplicativo é compatível.                                                                                          |
+| [instrumentation]() | InstrumentationDeclara uma classe que permite monitorar a interação de um aplicativo com o sistema. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [data>]()                  | Adiciona uma especificação de dados a um filtro de intents.                                                                                                      |
+| [intent-filter]() | Especifica os tipos de intents aos quais uma atividade, um serviço ou um broadcast receiver pode responder. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [grant-uri-permission]()   | Especifica os subconjuntos de dados do app aos quais o provedor de conteúdo pai tem permissão de acesso.                                                         |
+| [manifest]() | O elemento raiz do arquivo AndroidManifest.xml. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [instrumentation]()        | InstrumentationDeclara uma classe que permite monitorar a interação de um aplicativo com o sistema.                                                              |
+| [meta-data]() | Um par de nome-valor para um item de dados extra e arbitrários que pode ser fornecido ao componente pai. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [intent-filter]()          | Especifica os tipos de intents aos quais uma atividade, um serviço ou um broadcast receiver pode responder.                                                      |
+| [path-permission]() | Define o caminho e as permissões necessárias para um subconjunto específico de dados em um provedor de conteúdo. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [manifest]()               | O elemento raiz do arquivo AndroidManifest.xml.                                                                                                                  |
+| [permission]() | Declara uma permissão de segurança que pode ser usada para limitar o acesso a componentes ou recursos específicos deste ou de outros aplicativos. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [meta-data]()              | Um par de nome-valor para um item de dados extra e arbitrários que pode ser fornecido ao componente pai.                                                         |
+| [permission-group]() | Declara um nome para um agrupamento lógico de permissões relacionadas. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [path-permission]()        | Define o caminho e as permissões necessárias para um subconjunto específico de dados em um provedor de conteúdo.                                                 |
+| [permission-tree]() | Declara o nome base de uma árvore de permissões. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [permission]()             | Declara uma permissão de segurança que pode ser usada para limitar o acesso a componentes ou recursos específicos deste ou de outros aplicativos.                |
+| [provider]() | Declara o componente de um provedor de conteúdo. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [permission-group]()       | Declara um nome para um agrupamento lógico de permissões relacionadas.                                                                                           |
+| [queries]() | Declara o conjunto de outros apps que seu app pretende acessar. Saiba mais no guia sobre filtragem de visibilidade de pacotes. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [permission-tree]()        | Declara o nome base de uma árvore de permissões.                                                                                                                 |
+| [receiver]() | Declara um componente do broadcast receiver. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [provider]()               | Declara o componente de um provedor de conteúdo.                                                                                                                 |
+| [service]() | Declara um componente de serviço. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [queries]()                | Declara o conjunto de outros apps que seu app pretende acessar. Saiba mais no guia sobre filtragem de visibilidade de pacotes.                                   |
+| [supports-gl-texture]() | Declara um único formato de compactação de textura GL que pode ser usado com o app. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [receiver]()               | Declara um componente do broadcast receiver.                                                                                                                     |
+| [supports-screens]() | Declara os tamanhos de tela com suporte do app e ativa o modo de compatibilidade da tela para telas maiores do que as com suporte. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [service]()                | Declara um componente de serviço.                                                                                                                                |
+| [uses-configuration]() | Indica os recursos de entrada específicos exigidos pelo aplicativo. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [supports-gl-texture]()    | Declara um único formato de compactação de textura GL que pode ser usado com o app.                                                                              |
+| [uses-feature]() | Declara um único recurso de hardware ou software usado pelo aplicativo. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [supports-screens]()       | Declara os tamanhos de tela com suporte do app e ativa o modo de compatibilidade da tela para telas maiores do que as com suporte.                               |
+| [uses-library]() | Especifica uma biblioteca compartilhada que precisa ser vinculada ao aplicativo. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [uses-configuration]()     | Indica os recursos de entrada específicos exigidos pelo aplicativo.                                                                                              |
+| [uses-native-library]() | Especifica uma biblioteca compartilhada nativa oferecida pelo fornecedor que precisa ser vinculada ao app. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [uses-feature]()           | Declara um único recurso de hardware ou software usado pelo aplicativo.                                                                                          |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [uses-library]()           | Especifica uma biblioteca compartilhada que precisa ser vinculada ao aplicativo.                                                                                 |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [uses-native-library]()    | Especifica uma biblioteca compartilhada nativa oferecida pelo fornecedor que precisa ser vinculada ao app.                                                       |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [uses-permission]()        | Especifica uma permissão do sistema que precisa ser concedida pelo usuário para que o app funcione corretamente.                                                 |
+| [uses-permission]() | Especifica uma permissão do sistema que precisa ser concedida pelo usuário para que o app funcione corretamente. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [uses-permission-sdk-23]() | Especifica que um app quer uma permissão específica, mas somente se o app estiver instalado em um dispositivo com Android 6.0 (nível 23 da API) ou mais recente. |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [uses-sdk]()               | Permite expressar a compatibilidade de um aplicativo com uma ou mais versões da plataforma Android usando um número inteiro de nível de API.                     |
+| [uses-sdk]() | Permite expressar a compatibilidade de um aplicativo com uma ou mais versões da plataforma Android usando um número inteiro de nível de API. |
 
 > <action> Adiciona uma ação a um filtro de intents.
 
