@@ -154,7 +154,10 @@ O Android é um sistema operacional baseado no núcleo Linux, ou seja, na base d
 
 Sobre cada camada, cabe destacar:
 
-<p>1.<h3>Linux Kernel:</h3> O kernel é a parte central de qualquer sistema operacional e se comunica com o hardware subjacente em um dispositivo, sendo nesse caso um Kernel Linux, comum a sistemas operacionais baseados em Unix.</p>
+<h3>1 - Linux Kernel:</h3>
+
+<p>O kernel é a parte central de qualquer sistema operacional e se comunica com o hardware subjacente em um dispositivo, sendo nesse caso um Kernel Linux, comum a sistemas operacionais baseados em Unix.
+</p>
 
 2. Daemons e Bibliotecas Nativas: No Android, um daemon é um processo contínuo em segundo plano que executa várias tarefas no nível do sistema, dentre elas a execução de builds e a inicialização de bibliotecas. As bibliotecas nativas, por sua vez, têm por função interagir diretamente com o kernel ou outras interfaces e não dependem de uma implementação HAL baseada no espaço do usuário.
 
