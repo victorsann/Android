@@ -255,7 +255,7 @@ Além disso, o mesmo arquivo é incumbido de:
 
 O trecho a seguir demonstra a estrutura do arquivo:
 
-### a) <manifest>:
+### manifest:
 
 O elemento raiz do arquivo AndroidManifest.xml. Ele precisa conter um elemento <application> e especificar os atributos xmlns:android e package.
 
@@ -269,17 +269,17 @@ package: A
 
 O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml.
 
-### a) <activity>:
+### activity:
 
 Declara uma activity que implementa parte da UI do aplicativo. Todas as activities precisam ser representadas por elementos <activity> no arquivo de manifesto. Aquelas que não forem declaradas não serão vistas pelo sistema e não serão executadas.
 
 A seguir fica exemplificado como uma activity deve ser declarada:
 
-### a) <service>: A
+### service: A
 
-### a) <receiver>: A
+### receiver: A
 
-### a) <provider>: A
+### provider: A
 
 ## Gradle
 
