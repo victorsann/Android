@@ -144,7 +144,7 @@ Desse modo o Android é intencional e explicitamente uma iniciativa de código a
 
 </p>
 
-## 2. Visão Geral da Arquitetura
+# Visão Geral da Arquitetura
 
 <p align="justify">
 O Android é um sistema operacional baseado no núcleo Linux, ou seja, na base de sua arquitetura está um Kernel Linux. Tal arquitetura decorre da implementação de uma plataforma dedicada, também open source, chamada Android Open System Platform (AOSP), cuja stack de software contém as seguintes camadas:
@@ -226,11 +226,11 @@ Um aplicativo criado usando uma combinação das APIs do Android e do sistema. E
 Um aplicativo criado usando uma combinação de API do Android, API do sistema e acesso direto à implementação da estrutura do Android. Como um fabricante de dispositivos pode acessar diretamente APIs instáveis ​​na estrutura do Android, esses aplicativos devem ser pré-instalados no dispositivo e podem ser atualizados somente quando o software do sistema do dispositivo for atualizado.
 </p>
 
-# Guia do Desenvolvedor
+# 3. Guia do Desenvolvedor
 
 A
 
-## Fundamentos de uma Aplicação
+## 3.1. Fundamentos de uma Aplicação
 
 Os aplicativos Android podem ser desenvolvidos usando as linguagens Kotlin, Java e C++. As ferramentas do Android SDK compilam seu código junto com quaisquer dados e arquivos de recursos em um APK ou Android App Bundle.
 
@@ -256,7 +256,7 @@ Um aplicativo pode solicitar permissão para acessar dados do dispositivo, como 
 
 Tais métodos serão mais bem abordados no decorrer da documentação.
 
-## App Components
+## 3.2 App Components
 
 Os App Components são os blocos de construção essenciais de um aplicativo Android. Cada componente é um ponto de entrada pelo qual o sistema ou um usuário pode entrar em seu aplicativo. Há quatro tipos distintos de app components:
 
