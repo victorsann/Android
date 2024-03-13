@@ -205,8 +205,8 @@ A API do sistema representa as APIs do Android disponíveis apenas para parceiro
 ### 9. Aplicativo
 
 <p align="justify">
-
 Acima das demais camadas se encontram os aplicativos, dentre os quais destacam-se:
+</p>
 
 <p align="justify">
 Aplicativo Android: Um aplicativo criado exclusivamente usando a API do Android. A Google Play Store é amplamente usada para encontrar e baixar aplicativos Android, embora existam muitas outras alternativas. Em alguns casos, um fabricante de dispositivos pode querer pré-instalar um aplicativo Android para dar suporte à funcionalidade principal do dispositivo.
