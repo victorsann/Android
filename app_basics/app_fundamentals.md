@@ -118,5 +118,3 @@ Dentro do ciclo de vida de uma tela, é importante ficar atento as inicializaç�
 ## c) Broadcast receivers
 
 ## d) Content providers
-
-### The manifest file
