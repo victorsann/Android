@@ -148,51 +148,7 @@ Por exemplo, o sistema Android oferece um provedor de conteúdo que gerencia os 
 
 Todo content provider é subclasse da classe ContentProvider, a qual será abordada em detalhes mais adiante. -->
 
-## 3.3. O Arquivo Manifesto
-
-Antes que o sistema Android possa iniciar um app component, é necessário torná-lo ciente de sua existência, o que se dá a partir da leitura prévia do arquivo manifesto, ou AndroidManifest.xml, presente na raiz do projeto. Desse modo, todos os componentes da aplicação serão declarados nele.
-
-> [!NOTE]
-> Além disso, o mesmo arquivo é incumbido de:
->
-> - Identificar todas as permissões do usuário exigidas pelo app, como acesso à internet ou acesso a lista de contatos, arquivos, imagens, etc;
-> - Declarar o API level mínimo exigido pelo aplicação, baseando-se em quais APIs o app utiliza;
-> - Declarar as features de hardware e software requeridos pelo app, como câmera, serviços de Bluetooth ou tela multitoque;
-> - Declarar as bibliotecas de API as quais o app precisa ser vinculado (além das APIs do framework do Android), como a Biblioteca Google Maps.
-
-O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml:
-
-|                                                       Elemento                                                        | Descrição                                                                                                                                                        |
-| :-------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|                 [action](https://developer.android.com/guide/topics/manifest/action-element?hl=pt-br)                 | Adiciona uma ação a um filtro de intents.                                                                                                                        |
-|               [activity](https://developer.android.com/guide/topics/manifest/activity-element?hl=pt-br)               | Declara um componente da atividade.                                                                                                                              |
-|         [activity-alias](https://developer.android.com/guide/topics/manifest/activity-alias-element?hl=pt-br)         | Declara um alias para a atividade.                                                                                                                               |
-|            [application](https://developer.android.com/guide/topics/manifest/application-element?hl=pt-br)            | Declara o aplicativo.                                                                                                                                            |
-|               [category](https://developer.android.com/guide/topics/manifest/category-element?hl=pt-br)               | Adiciona um nome de categoria a um filtro de intents.                                                                                                            |
-|     [compatible-screens](https://developer.android.com/guide/topics/manifest/compatible-screens-element?hl=pt-br)     | Especifica cada configuração de tela com que o aplicativo é compatível.                                                                                          |
-|                   [data](https://developer.android.com/guide/topics/manifest/data-element?hl=pt-br)                   | Adiciona uma especificação de dados a um filtro de intents.                                                                                                      |
-|   [grant-uri-permission](https://developer.android.com/guide/topics/manifest/grant-uri-permission-element?hl=pt-br)   | Especifica os subconjuntos de dados do app aos quais o provedor de conteúdo pai tem permissão de acesso.                                                         |
-|        [instrumentation](https://developer.android.com/guide/topics/manifest/instrumentation-element?hl=pt-br)        | InstrumentationDeclara uma classe que permite monitorar a interação de um aplicativo com o sistema.                                                              |
-|          [intent-filter](https://developer.android.com/guide/topics/manifest/intent-filter-element?hl=pt-br)          | Especifica os tipos de intents aos quais uma atividade, um serviço ou um broadcast receiver pode responder.                                                      |
-|               [manifest](https://developer.android.com/guide/topics/manifest/manifest-element?hl=pt-br)               | O elemento raiz do arquivo AndroidManifest.xml.                                                                                                                  |
-|              [meta-data](https://developer.android.com/guide/topics/manifest/meta-data-element?hl=pt-br)              | Um par de nome-valor para um item de dados extra e arbitrários que pode ser fornecido ao componente pai.                                                         |
-|        [path-permission](https://developer.android.com/guide/topics/manifest/path-permission-element?hl=pt-br)        | Define o caminho e as permissões necessárias para um subconjunto específico de dados em um provedor de conteúdo.                                                 |
-|             [permission](https://developer.android.com/guide/topics/manifest/permission-element?hl=pt-br)             | Declara uma permissão de segurança que pode ser usada para limitar o acesso a componentes ou recursos específicos deste ou de outros aplicativos.                |
-|       [permission-group](https://developer.android.com/guide/topics/manifest/permission-group-element?hl=pt-br)       | Declara um nome para um agrupamento lógico de permissões relacionadas.                                                                                           |
-|        [permission-tree](https://developer.android.com/guide/topics/manifest/permission-tree-element?hl=pt-br)        | Declara o nome base de uma árvore de permissões.                                                                                                                 |
-|               [provider](https://developer.android.com/guide/topics/manifest/provider-element?hl=pt-br)               | Declara o componente de um provedor de conteúdo.                                                                                                                 |
-|                [queries](https://developer.android.com/guide/topics/manifest/queries-element?hl=pt-br)                | Declara o conjunto de outros apps que seu app pretende acessar. Saiba mais no guia sobre filtragem de visibilidade de pacotes.                                   |
-|               [receiver](https://developer.android.com/guide/topics/manifest/receiver-element?hl=pt-br)               | Declara um componente do broadcast receiver.                                                                                                                     |
-|                [service](https://developer.android.com/guide/topics/manifest/service-element?hl=pt-br)                | Declara um componente de serviço.                                                                                                                                |
-|    [supports-gl-texture](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element?hl=pt-br)    | Declara um único formato de compactação de textura GL que pode ser usado com o app.                                                                              |
-|       [supports-screens](https://developer.android.com/guide/topics/manifest/supports-screens-element?hl=pt-br)       | Declara os tamanhos de tela com suporte do app e ativa o modo de compatibilidade da tela para telas maiores do que as com suporte.                               |
-|     [uses-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element?hl=pt-br)     | Indica os recursos de entrada específicos exigidos pelo aplicativo.                                                                                              |
-|           [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element?hl=pt-br)           | Declara um único recurso de hardware ou software usado pelo aplicativo.                                                                                          |
-|           [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element?hl=pt-br)           | Especifica uma biblioteca compartilhada que precisa ser vinculada ao aplicativo.                                                                                 |
-|    [uses-native-library](https://developer.android.com/guide/topics/manifest/uses-native-library-element?hl=pt-br)    | Especifica uma biblioteca compartilhada nativa oferecida pelo fornecedor que precisa ser vinculada ao app.                                                       |
-|        [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element?hl=pt-br)        | Especifica uma permissão do sistema que precisa ser concedida pelo usuário para que o app funcione corretamente.                                                 |
-| [uses-permission-sdk-23](https://developer.android.com/guide/topics/manifest/uses-permission-sdk-23-element?hl=pt-br) | Especifica que um app quer uma permissão específica, mas somente se o app estiver instalado em um dispositivo com Android 6.0 (nível 23 da API) ou mais recente. |
-|               [uses-sdk](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=pt-br)               | Permite expressar a compatibilidade de um aplicativo com uma ou mais versões da plataforma Android usando um número inteiro de nível de API.                     |
+             |
 
 ## 3.4 Arquitetura
 
