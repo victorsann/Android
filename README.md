@@ -137,94 +137,65 @@ Dentro do ciclo de vida de uma tela, é importante ficar atento as inicializaç�
 
 # 1. O Sistema Operacional
 
-<p align="justify">
 Compreender o Android como sistema operacional perpassa o entendimento de como este é mantido e quem está por trás de seu desenvolvimento e gerenciamento. A princípio, o Android é um produto desenvolvido pelo grupo de empresas conhecido como Open Handset Alliance (OHA), liderado pela Google. O produto engloba uma série de subprojetos de software, gerido pelo Android Open Source Project (AOSP), por meio do Programa de compatibilidade do Android. Tal programa permite que qualquer pessoa que contribua para o desenvolvimento do produto faça parte de um ecossistema compartilhado.
 
 Desse modo o Android é intencional e explicitamente uma iniciativa de código aberto, que pode atender qualquer pessoa para qualquer finalidade, desde que legítima.
 
-</p>
-
 # 2. Visão Geral da Arquitetura
 
-<p align="justify">
 O Android é um sistema operacional baseado no núcleo Linux, ou seja, na base de sua arquitetura está um Kernel Linux. Tal arquitetura decorre da implementação de uma plataforma dedicada, também open source, chamada Android Open System Platform (AOSP), cuja stack de software contém as seguintes camadas:
-</p>
 
-![img](https://source.android.com/static/images/android_stack.png?hl=pt-br)
+<!-- ![img](https://source.android.com/static/images/android_stack.png?hl=pt-br)
 
 Sobre cada camada, cabe destacar:
 
 ### 1. Linux Kernel
 
-<p align="justify">
 O kernel é a parte central de qualquer sistema operacional e se comunica com o hardware subjacente em um dispositivo, sendo nesse caso um Kernel Linux, comum a sistemas operacionais baseados em Unix.
-</p>
 
 ### 2. Daemons e Bibliotecas Nativas
 
-<p align="justify">
 No Android, um daemon é um processo contínuo em segundo plano que executa várias tarefas no nível do sistema, dentre elas a execução de builds e a inicialização de bibliotecas. As bibliotecas nativas, por sua vez, têm por função interagir diretamente com o kernel ou outras interfaces e não dependem de uma implementação HAL baseada no espaço do usuário.
-</p>
 
 ### 3. HAL
 
-<p align="justify">
 Um HAL é uma camada de abstração com uma interface padrão para os fornecedores de hardware implementarem. Sua principal função é expor as capacidades do hardware do dispositivo para APIs de alto nível, permitindo implementar funcionalidades sem afetá-las ou modificá-las.
-</p>
 
 ### 4. Android Runtime:
 
-<p align="justify">
 O android runtime é um ambiente de tempo de execução Java fornecido pelo AOSP, que realiza a tradução do bytecode do aplicativo em instruções específicas do processador que são executadas pelo ambiente de tempo de execução do dispositivo.
-</p>
 
 ### 5. Serviços do Sistema
 
-<p align="justify">
 Os serviços do sistema são componentes modulares e focados, como system_server, SurfaceFlinger e MediaService. A funcionalidade exposta pela API da estrutura do Android se comunica com os serviços do sistema para acessar o hardware subjacente.
-</p>
 
 ### 6. Android Framework
 
-<p align="justify">
 O android framework é um grupo de classes Java, interfaces e outros códigos pré-compilados sobre os quais os aplicativos são construídos. Partes da estrutura são acessíveis publicamente por meio do uso da API do Android. Outras partes da estrutura estão disponíveis apenas para OEMs por meio do uso das APIs do sistema. O código da estrutura do Android é executado dentro do processo de um aplicativo.
-</p>
 
 ### 7. API do Android
 
-<p align="justify">
 A API do Android é a API disponível publicamente para desenvolvedores de aplicativos Android terceirizados.
-</p>
 
 ### 8. API do Sistema
 
-<p align="justify">
 A API do sistema representa as APIs do Android disponíveis apenas para parceiros e OEMs (Original Equipment Manufacturer) para inclusão em aplicativos agrupados. Essas APIs são marcadas como @SystemApi no código-fonte.
-</p>
 
 ### 9. Aplicativo
 
-<p align="justify">
 Acima das demais camadas se encontram os aplicativos, dentre os quais destacam-se:
-</p>
 
 ### Aplicativo Android
 
-<p align="justify">
- Um aplicativo criado exclusivamente usando a API do Android. A Google Play Store é amplamente usada para encontrar e baixar aplicativos Android, embora existam muitas outras alternativas. Em alguns casos, um fabricante de dispositivos pode querer pré-instalar um aplicativo Android para dar suporte à funcionalidade principal do dispositivo.
-</p>
+Um aplicativo criado exclusivamente usando a API do Android. A Google Play Store é amplamente usada para encontrar e baixar aplicativos Android, embora existam muitas outras alternativas. Em alguns casos, um fabricante de dispositivos pode querer pré-instalar um aplicativo Android para dar suporte à funcionalidade principal do dispositivo.
 
 ### Aplicativo Privilegiado
 
-<p align="justify">
 Um aplicativo criado usando uma combinação das APIs do Android e do sistema. Esses aplicativos devem ser pré-instalados como aplicativos privilegiados em um dispositivo.
-</p>
 
 ### Aplicativo do Fabricante do Dispositivo
 
-<p align="justify">
-Um aplicativo criado usando uma combinação de API do Android, API do sistema e acesso direto à implementação da estrutura do Android. Como um fabricante de dispositivos pode acessar diretamente APIs instáveis ​​na estrutura do Android, esses aplicativos devem ser pré-instalados no dispositivo e podem ser atualizados somente quando o software do sistema do dispositivo for atualizado.
-</p>
+Um aplicativo criado usando uma combinação de API do Android, API do sistema e acesso direto à implementação da estrutura do Android. Como um fabricante de dispositivos pode acessar diretamente APIs instáveis ​​na estrutura do Android, esses aplicativos devem ser pré-instalados no dispositivo e podem ser atualizados somente quando o software do sistema do dispositivo for atualizado. -->
 
 # 3. Guia do Desenvolvedor
 
@@ -232,17 +203,11 @@ A
 
 ## 3.1. Fundamentos de uma Aplicação
 
-<p align="justify">
-Os aplicativos Android podem ser desenvolvidos usando as linguagens Kotlin, Java e C++. As ferramentas do Android SDK compilam seu código junto com quaisquer dados e arquivos de recursos em um APK ou Android App Bundle.
-</p>
+<!-- Os aplicativos Android podem ser desenvolvidos usando as linguagens Kotlin, Java e C++. As ferramentas do Android SDK compilam seu código junto com quaisquer dados e arquivos de recursos em um APK ou Android App Bundle.
 
-<p align="justify">
 Um package Android, que é um arquivo compactado com um sufixo .apk, contém o conteúdo de um aplicativo Android necessário em tempo de execução e é o arquivo que os dispositivos com tecnologia Android usam para instalar um aplicativo.
-</p>
 
-<p align="justify">
 Um Android App Bundle, que pode ser identificado por um arquivo com o sufixo .aab, contém o conteúdo de um projeto de aplicativo Android, incluindo alguns metadados adicionais que não são necessários em tempo de execução. Um AAB é um formato de publicação e não pode ser instalado em dispositivos Android. Ele adia a geração e a assinatura do APK para um estágio posterior. Ao distribuir seu aplicativo por meio do Google Play, por exemplo, os servidores do Google Play geram APKs otimizados que contêm apenas os recursos e o código exigidos por um determinado dispositivo que está solicitando a instalação do aplicativo.
-</p>
 
 Cada aplicativo Android vive em sua própria sandBox, protegida pelos seguintes recursos de segurança:
 
@@ -264,78 +229,57 @@ Também cabe ressaltar que o sistema Android implementa o princípio de privilé
 
 <p align="justify">
 Um aplicativo pode solicitar permissão para acessar dados do dispositivo, como localização, câmera e conexão Bluetooth. O usuário deve conceder explicitamente essas permissões.
-</p>
+</p> -->
 
 Tais métodos serão mais bem abordados no decorrer da documentação.
 
 ## 3.2. App Components
 
-<p align="justify">
 Os App Components são os blocos de construção essenciais de um aplicativo Android. Cada componente é um ponto de entrada pelo qual o sistema ou um usuário pode entrar em seu aplicativo. Há quatro tipos distintos de app components:
-</p>
 
 ### 3.2.1. Activities
 
-<p align="justify">
 Uma activity é um fragmento da aplicação com qual o usuário pode interagir, a qual possui certa independência dentro da estrutura da aplicação. Por exemplo, um app como o Gmail possui uma atividade para listar novos emails, uma atividade que permite a leitura destes e outra que permite respondê-los. Ou seja, as atividades trabalham para criar uma experiência coesa das funções de uma aplicação. A maioria dos aplicativos contém várias telas, ou seja, várias atividades. Normalmente, uma atividade em um aplicativo é especificada como a MainActivity, sendo a tela inicial do aplicativo. Cada atividade pode então iniciar outra atividade para realizar ações distintas. Porém, diferentemente da sua contraparte desktop, mobile-apps nem sempre são inicializados de um mesmo ponto. Pelo contrário, a jornada do usuário normalmente se inicia de forma não determinada.
 
 Retornando ao exemplo do Gmail App, pode se notar diferentes formas de inicializá-lo, sendo a mais direta delas através da sua MainActivity. Por outro lado, quando seu acesso está atrelado a outro app, a MainActivity não será necessariamente utilizada, sendo possível acessar especificamente a task de escrita e envio de e-mails.
-
-</p>
 
 Toda activity é subclasse da classe Activity, a qual será abordada em detalhes mais adiante.
 
 ### 3.2.2. Services
 
-<p align="justify">
 Um service é um entry point capaz de executar um recurso de uma aplicação em segundo plano enquanto o usuário não interage com ela, ou de disponibilizar estes recursos a outras aplicações.
-</p>
 
-<p align="justify">
 Serviços podem ser tanto iniciados (restritos aos próprios processos) quanto vinculados (se estendem a processos de outros apps), de modo que se tornam úteis para todos os tipos de conceitos de sistemas high-level.
-</p>
 
 Todo service é subclasse da classe Service, a qual será abordada em detalhes mais adiante
 
 ### 3.2.3. Broadcast receivers
 
-<p align="justify">
 Um broadcast receiver é um componente de comunicação tanto entre usuário e sistema, quanto entre aplicações. Sua função é basicamente disparar e transmitir eventos a quem interessar, independentemente se o app destino esteja ou não em uso.
-</p>
 
-<p align="justify">
 Um app android utiliza um BroadcastReceiver tanto quando gera notificações para o usuário na barra de status, quanto quando sinaliza a outros apps que informações nele geradas estão disponíveis para uso (downloads, imagens, etc), o que ocorre sem que o usuário tome conhecimento.
-</p>
 
 Todo broadcast receiver é subclasse da classe BroadcastReceiver, a qual será abordada em detalhes mais adiante
 
 ### 3.2.4. Content providers
 
-<p align="justify">
 Um content provider gerencia um conjunto compartilhado de dados do app que você pode armazenar no sistema de arquivos, em um banco de dados SQLite, na Web ou em qualquer outro local de armazenamento permanente que seu app possa acessar. Por meio do provedor de conteúdo, outros apps podem consultar ou modificar os dados, se este assim permitir.
-</p>
 
-<p align="justify">
 Por exemplo, o sistema Android oferece um provedor de conteúdo que gerencia os dados de contato do usuário. Qualquer app com as permissões adequadas pode consultar o provedor de conteúdo, por exemplo, usando ContactsContract.Data, para ler e gravar informações sobre uma pessoa específica.
-</p>
 
 Todo content provider é subclasse da classe ContentProvider, a qual será abordada em detalhes mais adiante.
 
 ## 3.3. O Arquivo Manifesto
 
-<p align="justify">
 Antes que o sistema Android possa iniciar um app component, é necessário torná-lo ciente de sua existência, o que se dá a partir da leitura prévia do arquivo manifesto, ou AndroidManifest.xml, presente na raiz do projeto. Desse modo, todos os componentes da aplicação serão declarados nele.
-</p>
-
-Além disso, o mesmo arquivo é incumbido de:
 
 > [!NOTE]
-> Useful information that users should know, even when skimming content.
-
-- Identificar todas as permissões do usuário exigidas pelo app, como acesso à internet ou acesso a lista de contatos, arquivos, imagens, etc;
-- Declarar o API level mínimo exigido pelo aplicação, baseando-se em quais APIs o app utiliza;
-- Declarar as features de hardware e software requeridos pelo app, como câmera, serviços de Bluetooth ou tela multitoque;
-- Declarar as bibliotecas de API as quais o app precisa ser vinculado (além das APIs do framework do Android), como a Biblioteca Google Maps.
+> Além disso, o mesmo arquivo é incumbido de:
+>
+> - Identificar todas as permissões do usuário exigidas pelo app, como acesso à internet ou acesso a lista de contatos, arquivos, imagens, etc;
+> - Declarar o API level mínimo exigido pelo aplicação, baseando-se em quais APIs o app utiliza;
+> - Declarar as features de hardware e software requeridos pelo app, como câmera, serviços de Bluetooth ou tela multitoque;
+> - Declarar as bibliotecas de API as quais o app precisa ser vinculado (além das APIs do framework do Android), como a Biblioteca Google Maps.
 
 O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifest.xml:
 
@@ -347,7 +291,7 @@ O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifes
 |            [application](https://developer.android.com/guide/topics/manifest/application-element?hl=pt-br)            | Declara o aplicativo.                                                                                                                                            |
 |               [category](https://developer.android.com/guide/topics/manifest/category-element?hl=pt-br)               | Adiciona um nome de categoria a um filtro de intents.                                                                                                            |
 |     [compatible-screens](https://developer.android.com/guide/topics/manifest/compatible-screens-element?hl=pt-br)     | Especifica cada configuração de tela com que o aplicativo é compatível.                                                                                          |
-|                  [data>](https://developer.android.com/guide/topics/manifest/data-element?hl=pt-br)                   | Adiciona uma especificação de dados a um filtro de intents.                                                                                                      |
+|                   [data](https://developer.android.com/guide/topics/manifest/data-element?hl=pt-br)                   | Adiciona uma especificação de dados a um filtro de intents.                                                                                                      |
 |   [grant-uri-permission](https://developer.android.com/guide/topics/manifest/grant-uri-permission-element?hl=pt-br)   | Especifica os subconjuntos de dados do app aos quais o provedor de conteúdo pai tem permissão de acesso.                                                         |
 |        [instrumentation](https://developer.android.com/guide/topics/manifest/instrumentation-element?hl=pt-br)        | InstrumentationDeclara uma classe que permite monitorar a interação de um aplicativo com o sistema.                                                              |
 |          [intent-filter](https://developer.android.com/guide/topics/manifest/intent-filter-element?hl=pt-br)          | Especifica os tipos de intents aos quais uma atividade, um serviço ou um broadcast receiver pode responder.                                                      |
@@ -371,10 +315,10 @@ O trecho a seguir descreve todos os elementos válidos no arquivo AndroidManifes
 | [uses-permission-sdk-23](https://developer.android.com/guide/topics/manifest/uses-permission-sdk-23-element?hl=pt-br) | Especifica que um app quer uma permissão específica, mas somente se o app estiver instalado em um dispositivo com Android 6.0 (nível 23 da API) ou mais recente. |
 |               [uses-sdk](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=pt-br)               | Permite expressar a compatibilidade de um aplicativo com uma ou mais versões da plataforma Android usando um número inteiro de nível de API.                     |
 
-## 3.4. Gradle
+## 3.4 Arquitetura
 
 A
 
-## 3.5 Arquitetura
+## 3.5. Gradle
 
 A
