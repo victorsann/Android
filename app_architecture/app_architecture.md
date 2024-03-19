@@ -22,6 +22,8 @@ Considerando os princípios de arquitetura comuns mencionados na seção anterio
 
 É possível adicionar uma camada extra conhecida como camada de domínios para simplificar e reutilizar as interações entre a IU e as camadas de dados.
 
+<img style="width: 400px;" src="../assets/mad-arch-overview.png"/>
+
 ![Diagrama de uma arquitetura típica de app.](../assets/mad-arch-overview.png "Figura 1")
 
 > [!Note]
