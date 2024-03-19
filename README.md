@@ -229,9 +229,9 @@ Também cabe ressaltar que o sistema Android implementa o princípio de privilé
 Um aplicativo pode solicitar permissão para acessar dados do dispositivo, como localização, câmera e conexão Bluetooth. O usuário deve conceder explicitamente essas permissões.
 </p> -->
 
-Tais métodos serão mais bem abordados no decorrer da documentação.
+<!-- Tais métodos serão mais bem abordados no decorrer da documentação. -->
 
-## 3.2. App Components
+<!-- ## 3.2. App Components
 
 Os App Components são os blocos de construção essenciais de um aplicativo Android. Cada componente é um ponto de entrada pelo qual o sistema ou um usuário pode entrar em seu aplicativo. Há quatro tipos distintos de app components:
 
@@ -265,7 +265,7 @@ Um content provider gerencia um conjunto compartilhado de dados do app que você
 
 Por exemplo, o sistema Android oferece um provedor de conteúdo que gerencia os dados de contato do usuário. Qualquer app com as permissões adequadas pode consultar o provedor de conteúdo, por exemplo, usando ContactsContract.Data, para ler e gravar informações sobre uma pessoa específica.
 
-Todo content provider é subclasse da classe ContentProvider, a qual será abordada em detalhes mais adiante.
+Todo content provider é subclasse da classe ContentProvider, a qual será abordada em detalhes mais adiante. -->
 
 ## 3.3. O Arquivo Manifesto
 
