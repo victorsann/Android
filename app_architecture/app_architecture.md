@@ -21,3 +21,5 @@ Considerando os princípios de arquitetura comuns mencionados na seção anterio
 - A camada de dados que contém a lógica de negócios do app e expõe os dados do aplicativo.
 
 É possível adicionar uma camada extra conhecida como camada de domínios para simplificar e reutilizar as interações entre a IU e as camadas de dados.
+
+![Diagrama de uma arquitetura típica de app.](../assets/mad-arch-overview.png "Figura 1")
