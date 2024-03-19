@@ -47,7 +47,7 @@ Toda activity é subclasse da classe [Activity](https://developer.android.com/re
 
 ## a) Stack
 
-As atividades em um sistema Android são agrupadas seguindo o modelo de [Stacks](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura em uma <i>task</i>. Quando uma atividade é inicializada, ela é posicionada sobre a stack atual, passando a estar em execução; ![Now in Android](./assets/179646952-ac018b2e-97d3-417c-b36b-505bb55f49e4.png "Now in Android")
+As atividades em um sistema Android são agrupadas seguindo o modelo de [Stacks](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura em uma <i>task</i>. Quando uma atividade é inicializada, ela é posicionada sobre a stack atual, passando a estar em execução; ![Stack](./assets/179646952-ac018b2e-97d3-417c-b36b-505bb55f49e4.png =x400 "Now in Android")
 
 <!-- <img align="right" style="width: 400px;" src="https://user-images.githubusercontent.com/61476935/179646952-ac018b2e-97d3-417c-b36b-505bb55f49e4.png"> -->
 
