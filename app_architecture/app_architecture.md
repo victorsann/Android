@@ -22,7 +22,9 @@ Considerando os princípios de arquitetura comuns mencionados na seção anterio
 
 É possível adicionar uma camada extra conhecida como camada de domínios para simplificar e reutilizar as interações entre a IU e as camadas de dados.
 
-<img align="center" style="width: 400px;" src="../assets/mad-arch-overview.png"/>
+<img align="center" style="width: 500px;" src="../assets/mad-arch-overview.png"/>
+
+<br>
 
 > [!Note]
 > As setas nos diagramas deste guia representam as dependências entre classes. Por exemplo, a camada do domínio depende das classes de camada de dados.
