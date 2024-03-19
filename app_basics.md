@@ -37,23 +37,23 @@ Os App Components são os blocos de construção essenciais de um aplicativo And
 
 Cada component serve a um propósito distinto e possui um ciclo de vida distinto, o qual define como o mesmo é criado e destruído. Os tópicos a seguir descrevem cada um dos quatro em detalhes:
 
-## Activities
+# Activities
 
 Uma <i>activity</i> é um entry point da aplicação com qual o usuário pode interagir. Um aplicativo poder conter uma ou várias activities, as quis possuiem certa independência dentro da estrutura da aplicação.
 
-Toda activity é subclasse de [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1)
+Toda activity é subclasse de [Activity](https://developer.android.com/reference/android/app/Activity?authuser=1), e dela derivam os seguintes conceitos:
 
 ## a) Fragments
+
+A
 
 ## b) Activity Lifecycle
 
 As atividades em um sistema Android são agrupadas seguindo o modelo de [Stacks](https://developer.android.com/guide/components/activities/tasks-and-back-stack?authuser=1), sendo posicionadas de acorde com sua ordem de abertura em uma <i>task (conjunto de atividades)</i>. Quando uma atividade é inicializada, esta é posicionada sobre a stack atual, passando a estar em execução:
 
-<img align="right" style="width: 400px;" src="assets/179646952-ac018b2e-97d3-417c-b36b-505bb55f49e4.png"/>
+<img align="right" style="width: 4500px;" src="assets/179646952-ac018b2e-97d3-417c-b36b-505bb55f49e4.png"/>
 
-Desse modo, a atividade anterior sempre permanece abaixo na stack, compondo a <i>back stack</i>.
-
-Uma atividade que faz parte da back stack não retorna ao primeiro plano até que a nova atividade seja encerrada. É possível que haja uma ou multiplas stacks visíveis em uma tela.
+Desse modo, a atividade anterior sempre permanece abaixo na stack, compondo a <i>back stack</i>. Uma atividade que faz parte da back stack não retorna ao primeiro plano até que a nova atividade seja encerrada.
 
 A tela inicial do dispositivo é o ponto de partida para a maioria das tasks. Quando um aplicativo é acessado, sua task fica em primeiro plano. Se não existir nenhuma task para o aplicativo (o aplicativo não foi usado recentemente), uma nova task será criada a partir da tela inicial do app.
 
@@ -78,8 +78,9 @@ A classe Activity se encarrega de criar métodos para lidar com as diferentes fo
         protected void onDestroy();
     }
 
-O ciclo de vida de uma atividade é essencialmente composto por quatro estados:
+<!-- O ciclo de vida de uma atividade é essencialmente composto por quatro estados: -->
 
+<!--
 ### Active
 
 Caso uma atividade esteja em primeiro plano (na posição mais acima da stack atual), seu estado é definido como <i>active</i> ou <i>running</i>, sendo esta a atividade com a qual o usuário está interegindo.
@@ -96,7 +97,7 @@ Se uma atividade for completamente obscurecida por outra, o estado desta passa a
 
 ### Destroyed
 
-O sistema pode descartar uma atividade da memória pedindo que ela termine ou simplesmente eliminando seu processo, a tornando <i>destroyed</i>. Quando for exibida novamente para o usuário, ela deve ser completamente reiniciada, retomando o estado anterior.
+O sistema pode descartar uma atividade da memória pedindo que ela termine ou simplesmente eliminando seu processo, a tornando <i>destroyed</i>. Quando for exibida novamente para o usuário, ela deve ser completamente reiniciada, retomando o estado anterior. -->
 
 O diagrama a seguir ilustra como o ciclo de vida de uma atividade deve se comportar:
 
@@ -104,11 +105,11 @@ O diagrama a seguir ilustra como o ciclo de vida de uma atividade deve se compor
 
 Dentro do ciclo de vida de uma tela, é importante ficar atento as inicializações e finalizações de cada periodo:
 
-- O ciclo completo acontece entre a primeira chamada do método onCreate() e a primeira chamada do onDestroy(). Uma atividade fará toda a configuração do estado "global" em onCreate(), liberando todos os recursos restantes em onDestroy().
-
-- O tempo de vida visível de uma atividade acontece entre a chamada do método onStart() e uma chamada correspondente ao método onStop(). Durante este periodo o usuário pode ver a atividade na tela, embora não esteja em primeiro plano. Ambos os métodos podem ser chamados várias vezes à medida que a atividade se torna visível e oculta para o usuário.
-
-- O tempo de vida em primeiro plano de uma atividade acontece entre a chamada do método onResume() e uma chamada correspondente ao método onPause(). Durante este periodo a atividade fica visível, ativa e interagindo com o usuário. Uma atividade pode frequentemente ficar entre os estados resumed e paused - por exemplo, quando o dispositivo entra em suspensão, quando um resultado de atividade é entregue, quando uma nova intenção é entregue - portanto, o código nesses métodos deve ser bastante leve.
+> [!NOTE]
+>
+> - O ciclo completo acontece entre a primeira chamada do método onCreate() e a primeira chamada do onDestroy(). Uma atividade fará toda a configuração do estado "global" em onCreate(), liberando todos os recursos restantes em onDestroy().
+> - O tempo de vida visível de uma atividade acontece entre a chamada do método onStart() e uma chamada correspondente ao método onStop(). Durante este periodo o usuário pode ver a atividade na tela, embora não esteja em primeiro plano. Ambos os métodos podem ser chamados várias vezes à medida que a atividade se torna visível e oculta para o usuário.
+> - O tempo de vida em primeiro plano de uma atividade acontece entre a chamada do método onResume() e uma chamada correspondente ao método onPause(). Durante este periodo a atividade fica visível, ativa e interagindo com o usuário. Uma atividade pode frequentemente ficar entre os estados resumed e paused - por exemplo, quando o dispositivo entra em suspensão, quando um resultado de atividade é entregue, quando uma nova intenção é entregue - portanto, o código nesses métodos deve ser bastante leve.
 
 ## b) Services
 
