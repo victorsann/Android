@@ -113,8 +113,8 @@ Dentro do ciclo de vida de uma tela, é importante ficar atento as inicializaç�
 >
 > O tempo de vida em primeiro plano de uma atividade acontece entre a chamada do método onResume() e uma chamada correspondente ao método onPause(). Durante este periodo a atividade fica visível, ativa e interagindo com o usuário. Uma atividade pode frequentemente ficar entre os estados resumed e paused - por exemplo, quando o dispositivo entra em suspensão, quando um resultado de atividade é entregue, quando uma nova intenção é entregue - portanto, o código nesses métodos deve ser bastante leve.
 
-## b) Services
+# Services
 
-## c) Broadcast receivers
+# Broadcast receivers
 
-## d) Content providers
+# Content providers
