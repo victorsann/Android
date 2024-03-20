@@ -42,6 +42,12 @@ A camada de IU é composta por dois itens:
 - Elementos da UI que renderizam os dados na tela. Esses elementos são criados usando funções de visualizações ou do [Jetpack Compose](https://developer.android.com/jetpack/compose?hl=pt-br).
 - Holders de estado, como classes [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel?hl=pt-br), que armazenam dados, os expõem à IU e processam a lógica.
 
+<br>
+<div align="center">
+<img style="width: 500px;" src="../assets/mad-arch-overview-ui.png"/>
+</div>
+<br>
+
 ## 2.2. Data Layer
 
 ## 2.3. Domain Layer
