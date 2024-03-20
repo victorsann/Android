@@ -1,14 +1,14 @@
-# Princípios de arquitetura comuns
+# 1. Princípios de Arquitetura Comuns
 
-## Separação de Conceitos
+## 1.1. Separação de Conceitos
 
-## UI Baseada em Modelos de Dados
+## 1.2. UI Baseada em Modelos de Dados
 
-## Única Fonte de Informações
+## 1.3. Única Fonte de Informações
 
-## Flúxo de Dados Unidirecional
+## 1.4. Flúxo de Dados Unidirecional
 
-# Arquitetura Recomendada
+# 2. Arquitetura Recomendada
 
 Esta seção demonstra como estruturar o app seguindo as práticas recomendadas.
 
