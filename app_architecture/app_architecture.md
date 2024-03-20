@@ -31,7 +31,7 @@ Considerando os princípios de arquitetura comuns mencionados na seção anterio
 > [!Note]
 > As setas nos diagramas deste guia representam as dependências entre classes. Por exemplo, a camada do domínio depende das classes de camada de dados.
 
-Sobre cada camada é possível citar:
+Sobre cada camada cabe destacar:
 
 ## UI Layer
 
