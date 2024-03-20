@@ -33,8 +33,15 @@ Considerando os princípios de arquitetura comuns mencionados na seção anterio
 
 Sobre cada camada cabe destacar:
 
-## UI Layer
+## 2.1. UI Layer
 
-## Data Layer
+A função da camada de UI (ou camada de apresentação) é exibir os dados do aplicativo na tela. Sempre que os dados mudam, seja devido à interação do usuário, ou a uma entrada externa, como uma resposta de rede, a interface é atualizada para refletir as mudanças.
 
-## Domain Layer
+A camada de IU é composta por dois itens:
+
+- Elementos da UI que renderizam os dados na tela. Esses elementos são criados usando funções de visualizações ou do [Jetpack Compose](https://developer.android.com/jetpack/compose?hl=pt-br).
+- Holders de estado, como classes [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel?hl=pt-br), que armazenam dados, os expõem à IU e processam a lógica.
+
+## 2.2. Data Layer
+
+## 2.3. Domain Layer
